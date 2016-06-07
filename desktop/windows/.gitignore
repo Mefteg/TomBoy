@@ -1,0 +1,9 @@
+# Builld results
+[Dd]ebug/
+[Rr]elease/
+
+# Misc
+*.sdf
+*.opendb
+*.suo
+.vs/
