@@ -11,7 +11,7 @@ public:
 
     virtual bool    render(IScene* scene) override;
 
-    virtual void    setPixel(int x, int y, Color color) override;
+    virtual void    setPixel(unsigned int x, unsigned int y, Color color) override;
 };
 
 #endif //__TB_ARDUINORENDERER__

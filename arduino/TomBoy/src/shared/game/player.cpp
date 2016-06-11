@@ -26,7 +26,7 @@ bool Player::update(float dt)
     }
     else if (m_x + m_width > SCREEN_WIDTH + 1)
     {
-        m_x = SCREEN_WIDTH - m_width;
+        m_x = (float) (SCREEN_WIDTH - m_width);
         m_speedX *= -1;
     }
 
@@ -38,7 +38,7 @@ bool Player::update(float dt)
     }
     else if (m_y + m_height > SCREEN_HEIGHT + 1)
     {
-        m_y = SCREEN_HEIGHT - m_height;
+        m_y = (float)(SCREEN_HEIGHT - m_height);
         m_speedY *= -1;
     }
 

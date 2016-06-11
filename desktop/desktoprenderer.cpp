@@ -50,7 +50,7 @@ bool DesktopRenderer::render(IScene* scene)
     return true;
 }
 
-void DesktopRenderer::setPixel(int x, int y, Color color)
+void DesktopRenderer::setPixel(unsigned int x, unsigned int y, Color color)
 {
     unsigned int id = (y * SCREEN_WIDTH + x) * 4;
     if (id < SCREEN_WIDTH * SCREEN_HEIGHT * 4)

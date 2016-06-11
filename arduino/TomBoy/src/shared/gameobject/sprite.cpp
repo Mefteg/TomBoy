@@ -37,13 +37,13 @@ void Sprite::draw(IRenderer* renderer) const
         return;
     }
 
-    for (int i=0; i<m_height; ++i)
+    for (unsigned int i=0; i<m_height; ++i)
     {
-        int screenLine = m_y + i;
-        int spriteLine = i * m_width;
-        for (int j=0; j<m_width; ++j)
+        unsigned int screenLine = (unsigned int) m_y + i;
+        unsigned int spriteLine = i * m_width;
+        for (unsigned int j=0; j<m_width; ++j)
         {
-            renderer->setPixel(m_x + j, screenLine, (IRenderer::Color) m_pixels[spriteLine + j]);
+            renderer->setPixel((unsigned int) m_x + j, screenLine, (IRenderer::Color) m_pixels[spriteLine + j]);
         }
     }
 }

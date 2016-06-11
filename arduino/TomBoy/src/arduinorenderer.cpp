@@ -28,7 +28,7 @@ bool ArduinoRenderer::render(IScene* scene)
     return true;
 }
 
-void ArduinoRenderer::setPixel(int x, int y, Color color)
+void ArduinoRenderer::setPixel(unsigned int x, unsigned int y, Color color)
 {
     SetPixel(x, y, color);
 }

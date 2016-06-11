@@ -18,7 +18,7 @@ public:
 
     virtual bool    render(IScene* scene) = 0;
 
-    virtual void    setPixel(int x, int y, Color color) = 0;
+    virtual void    setPixel(unsigned int x, unsigned int y, Color color) = 0;
 
 };
 
