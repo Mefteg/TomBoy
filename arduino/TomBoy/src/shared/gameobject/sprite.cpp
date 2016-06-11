@@ -43,7 +43,7 @@ void Sprite::draw(IRenderer* renderer) const
         int spriteLine = i * m_width;
         for (int j=0; j<m_width; ++j)
         {
-            renderer->setPixel(screenLine, m_x + j, (IRenderer::Color) m_pixels[spriteLine + j]);
+            renderer->setPixel(m_x + j, screenLine, (IRenderer::Color) m_pixels[spriteLine + j]);
         }
     }
 }

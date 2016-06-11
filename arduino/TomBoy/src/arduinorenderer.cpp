@@ -30,5 +30,5 @@ bool ArduinoRenderer::render(IScene* scene)
 
 void ArduinoRenderer::setPixel(int x, int y, Color color)
 {
-    SetPixel(y, x, color);
+    SetPixel(x, y, color);
 }
