@@ -9,12 +9,8 @@ class IApp
 public:
     virtual ~IApp() {}
 
-    virtual bool setup() = 0;
-    virtual bool loop() = 0;
-
-protected:
-    IScene* m_scene;
-    IRenderer* m_renderer;
+    virtual bool    setup() = 0;
+    virtual bool    loop() = 0;
 };
 
 #endif //__TB_IAPP__

@@ -1,11 +1,13 @@
 #ifndef __TB_DESKTOPAPP__
 #define __TB_DESKTOPAPP__
 
-#include "../arduino/TomBoy/src/shared/iapp.h"
+#include "../arduino/TomBoy/src/shared/app/basicapp.h"
 
 #include <SFML/Graphics.hpp>
 
-class DesktopApp : public IApp
+#include "desktopdisplaydriver.h"
+
+class DesktopApp : public BasicApp
 {
 public:
     DesktopApp();
@@ -15,8 +17,8 @@ public:
     virtual bool loop() override;
 
 protected:
-    sf::RenderWindow    m_window;
-    sf::Clock           m_clock;
+    sf::RenderWindow        m_window;
+    sf::Clock               m_clock;
 };
 
 #endif //__TB_DESKTOPAPP__
