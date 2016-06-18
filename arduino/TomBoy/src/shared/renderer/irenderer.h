@@ -10,8 +10,8 @@ class IRenderer
 public:
     enum Color
     {
-        WHITE = 0,
-        BLACK
+        Color_WHITE = 0,
+        Color_BLACK
     };
 
     virtual ~IRenderer() {}

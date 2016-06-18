@@ -1,9 +1,11 @@
 #ifndef __TB_ARDUINOAPP__
 #define __TB_ARDUINOAPP__
 
-#include "shared/iapp.h"
+#include "shared/app/basicapp.h"
 
-class ArduinoApp : public IApp
+#include "arduinodisplaydriver.h"
+
+class ArduinoApp : public BasicApp
 {
 public:
     ArduinoApp();
