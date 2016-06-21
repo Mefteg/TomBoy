@@ -1,3 +1,6 @@
+#ifndef __TB_LCDFUNCTIONS__
+#define __TB_LCDFUNCTIONS__
+
 #include <Arduino.h>
 
 #include <SPI.h>
@@ -71,7 +74,7 @@ display. Each successive byte covers the next 8-pixel column over
 until you reach the right-edge of the display and step down 8 rows.
 
 To update the display, we first have to write to this array, then
-call the updateDisplay() function, which sends this whole array
+call the UpdateDisplay() function, which sends this whole array
 to the PCD8544.
 
 Because the PCD8544 won't let us write individual pixels at a
@@ -323,8 +326,8 @@ void setBitmap(const char * bitArray)
 
 // This function clears the entire display either white (0) or
 // black (1).
-// The screen won't actually clear until you call updateDisplay()!
-void clearDisplay(boolean bw)
+// The screen won't actually clear until you call UpdateDisplay()!
+void ClearDisplay(boolean bw)
 {
   for (int i=0; i<(LCD_WIDTH * LCD_HEIGHT / 8); i++)
   {
@@ -345,7 +348,7 @@ void gotoXY(int x, int y)
 
 // This will actually draw on the display, whatever is currently
 // in the displayMap array.
-void updateDisplay()
+void UpdateDisplay()
 {
   gotoXY(0, 0);
   for (int i=0; i < (LCD_WIDTH * LCD_HEIGHT / 8); i++)
@@ -356,7 +359,7 @@ void updateDisplay()
 
 // Set contrast can set the LCD Vop to a value between 0 and 127.
 // 40-60 is usually a pretty good range.
-void setContrast(byte contrast)
+void SetContrast(byte contrast)
 {
   LCDWrite(LCD_COMMAND, 0x21); //Tell LCD that extended commands follow
   LCDWrite(LCD_COMMAND, 0x80 | contrast); //Set LCD Vop (Contrast): Try 0xB1(good @ 3.3V) or 0xBF if your display is too dark
@@ -379,11 +382,11 @@ void invertDisplay()
   {
     displayMap[i] = ~displayMap[i] & 0xFF;
   }
-  updateDisplay();
+  UpdateDisplay();
 }
 
 //This sends the magical commands to the PCD8544
-void lcdBegin(void)
+void LcdBegin(void)
 {
   //Configure control pins
   pinMode(scePin, OUTPUT);
@@ -410,3 +413,5 @@ void lcdBegin(void)
   LCDWrite(LCD_COMMAND, 0x20);
   LCDWrite(LCD_COMMAND, 0x0C); //Set display control, normal mode.
 }
+
+#endif //__TB_LCDFUNCTIONS__

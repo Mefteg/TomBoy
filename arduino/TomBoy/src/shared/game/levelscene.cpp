@@ -4,53 +4,32 @@
 
 #include "player.h"
 
-LevelScene::LevelScene()
+LevelScene::LevelScene(HardwareGateway* hardwareGateway)
+    : BasicScene(hardwareGateway)
 {
-    m_defaultPixels = new bool[16];
-
-    m_defaultPixels[0] = 1;
-    m_defaultPixels[1] = 1;
-    m_defaultPixels[2] = 1;
-    m_defaultPixels[3] = 1;
-
-    m_defaultPixels[4] = 1;
-    m_defaultPixels[5] = 0;
-    m_defaultPixels[6] = 1;
-    m_defaultPixels[7] = 1;
-
-    m_defaultPixels[8] = 1;
-    m_defaultPixels[9] = 1;
-    m_defaultPixels[10] = 0;
-    m_defaultPixels[11] = 1;
-
-    m_defaultPixels[12] = 1;
-    m_defaultPixels[13] = 1;
-    m_defaultPixels[14] = 1;
-    m_defaultPixels[15] = 1;
-
-    m_object = new Player(ASSET_PLAYER);
 }
 
 LevelScene::~LevelScene()
 {
     delete [] m_defaultPixels;
-    delete m_object;
+
+    delete m_objects[0];
+    delete[] m_objects;
 }
 
 bool LevelScene::setup()
 {
-    return true;
+    bool success = BasicScene::setup();
+
+    m_objects = new IGameObject*[1];
+    m_objects[0] = new Player(this, ASSET_PLAYER);
+
+    return success;
 }
 
-bool LevelScene::update(float dt)
+IGameObject** LevelScene::getGameObjects() const
 {
-    m_object->update(dt);
-    return true;
-}
-
-IGameObject* LevelScene::getGameObjects() const
-{
-    return m_object;
+    return m_objects;
 }
 
 unsigned int LevelScene::getNbGameObjects() const

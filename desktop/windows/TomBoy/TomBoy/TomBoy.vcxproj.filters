@@ -22,15 +22,27 @@
     <Filter Include="Source Files\shared\gameobject">
       <UniqueIdentifier>{803864c8-d6f7-4d85-9937-0ee46f6e0022}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\shared\hardware">
+      <UniqueIdentifier>{31436fed-6726-4b81-a27e-260c44000bd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shared\scene">
+      <UniqueIdentifier>{d321c0b4-8ee0-48bb-b674-8867329b24fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shared\app">
+      <UniqueIdentifier>{e9f36076-be8c-4534-a107-3535fd75ee87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shared\renderer">
+      <UniqueIdentifier>{4dfdcf12-c499-4bd6-9fdf-3a7f71bb0b6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shared\controlsmanager">
+      <UniqueIdentifier>{52b94264-bc2e-4e7b-9476-1cc7d50f4ae6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\desktopapp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\desktoprenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\game\levelscene.cpp">
@@ -42,22 +54,31 @@
     <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\game\player.cpp">
       <Filter>Source Files\shared\game</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\scene\basicscene.cpp">
+      <Filter>Source Files\shared\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\app\basicapp.cpp">
+      <Filter>Source Files\shared\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\renderer\basicrenderer.cpp">
+      <Filter>Source Files\shared\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\desktopdisplaydriver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\hardware\hardwaregateway.cpp">
+      <Filter>Source Files\shared\hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\desktopcontrolsdriver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\controlsmanager\basiccontrolsmanager.cpp">
+      <Filter>Source Files\shared\controlsmanager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\desktopapp.h">
       <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\desktoprenderer.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\iapp.h">
-      <Filter>Source Files\shared</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\irenderer.h">
-      <Filter>Source Files\shared</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\iscene.h">
-      <Filter>Source Files\shared</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\game\levelscene.h">
       <Filter>Source Files\shared\game</Filter>
@@ -76,6 +97,48 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\game\player.h">
       <Filter>Source Files\shared\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\hardware\hardwaregateway.h">
+      <Filter>Source Files\shared\hardware</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\hardware\idisplaydriver.h">
+      <Filter>Source Files\shared\hardware</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\hardware\idriver.h">
+      <Filter>Source Files\shared\hardware</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\scene\iscene.h">
+      <Filter>Source Files\shared\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\scene\basicscene.h">
+      <Filter>Source Files\shared\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\app\iapp.h">
+      <Filter>Source Files\shared\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\renderer\irenderer.h">
+      <Filter>Source Files\shared\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\app\basicapp.h">
+      <Filter>Source Files\shared\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\renderer\basicrenderer.h">
+      <Filter>Source Files\shared\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\desktopdisplaydriver.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\hardware\icontrolsdriver.h">
+      <Filter>Source Files\shared\hardware</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\desktopcontrolsdriver.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\controlsmanager\icontrolsmanager.h">
+      <Filter>Source Files\shared\controlsmanager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\controlsmanager\basiccontrolsmanager.h">
+      <Filter>Source Files\shared\controlsmanager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,25 +2,37 @@
 
 #include "../arduino/TomBoy/src/shared/tomboydefines.h"
 
+#include "desktopdisplaydriver.h"
+#include "desktopcontrolsdriver.h"
+
 #include "../arduino/TomBoy/src/shared/game/levelscene.h"
-#include "desktoprenderer.h"
 
 DesktopApp::DesktopApp()
     : m_window(sf::VideoMode(SCREEN_WIDTH * 3, SCREEN_HEIGHT * 3), "TomBoy") // width must be >= 116
 {
-    m_scene = new LevelScene();
-    m_renderer = new DesktopRenderer(&m_window);
+    m_hardwareGateway.display   = new DesktopDisplayDriver(&m_window);
+    m_hardwareGateway.controls  = new DesktopControlsDriver();
+
+    m_scene = new LevelScene(&m_hardwareGateway);
 }
 
 DesktopApp::~DesktopApp()
 {
-    delete m_renderer;
     delete m_scene;
+
+    delete m_hardwareGateway.controls;
+    delete m_hardwareGateway.display;
 }
 
 bool DesktopApp::setup()
 {
-    return m_scene->setup();
+    bool success = true;
+
+    success &= m_hardwareGateway.display->init();
+
+    success &= m_scene->setup();
+
+    return success;
 }
 
 bool DesktopApp::loop()
@@ -43,7 +55,7 @@ bool DesktopApp::loop()
         // update scene
         loopAgain |= m_scene->update(elapsedTime.asSeconds());
         // render scene
-        loopAgain |= m_renderer->render(m_scene);
+        loopAgain |= m_scene->render();
     }
 
     return loopAgain;
