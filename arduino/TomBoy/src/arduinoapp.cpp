@@ -2,6 +2,9 @@
 
 #include <Arduino.h>
 
+#include "arduinodisplaydriver.h"
+#include "arduinocontrolsdriver.h"
+
 #include "shared/game/levelscene.h"
 
 ArduinoApp::ArduinoApp()
@@ -9,13 +12,15 @@ ArduinoApp::ArduinoApp()
 {
     Serial.begin(9600);
 
-    m_hardwareGateway.display = new ArduinoDisplayDriver();
+    m_hardwareGateway.display   = new ArduinoDisplayDriver();
+    m_hardwareGateway.controls  = new ArduinoControlsDriver();
 
     m_scene = new LevelScene(&m_hardwareGateway);
 }
 
 ArduinoApp::~ArduinoApp()
 {
+    delete m_hardwareGateway.controls;
     delete m_hardwareGateway.display;
 }
 
@@ -24,6 +29,7 @@ bool ArduinoApp::setup()
     bool success = true;
 
     success &= m_hardwareGateway.display->init();
+    success &= m_hardwareGateway.controls->init();
 
     success &= m_scene->setup();
 

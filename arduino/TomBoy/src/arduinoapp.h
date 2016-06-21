@@ -3,8 +3,6 @@
 
 #include "shared/app/basicapp.h"
 
-#include "arduinodisplaydriver.h"
-
 class ArduinoApp : public BasicApp
 {
 public:
