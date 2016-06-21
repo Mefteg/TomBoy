@@ -3,7 +3,7 @@
 
 #include "../tomboydefines.h"
 
-class IScene;
+#include "../hardware/idisplaydriver.h"
 
 class IRenderer
 {

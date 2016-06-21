@@ -7,11 +7,14 @@ class Player : public Sprite
 {
 public:
     Player();
-    Player(const bool* pixels);
+    Player(IScene* scene);
+    Player(IScene* scene, const bool* pixels);
 
     virtual bool    update(float dt) override;
 
 protected:
+    void    reset();
+
     float   m_speedX;
     float   m_speedY;
 };

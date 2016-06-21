@@ -5,8 +5,6 @@
 
 #include "../hardware/hardwaregateway.h"
 
-#include "../renderer/irenderer.h"
-
 class BasicScene : public IScene
 {
 public:
@@ -17,12 +15,17 @@ public:
     virtual bool            update(float dt) override;
     virtual bool            render() override;
 
-    virtual IGameObject**   getGameObjects() const override;
-    virtual unsigned int    getNbGameObjects() const override;
+    virtual IRenderer&          getRenderer() const override;
+    virtual IControlsManager&   getControlsManager() const override;
+
+    virtual IGameObject**       getGameObjects() const override;
+    virtual unsigned int        getNbGameObjects() const override;
 
 protected:
     HardwareGateway*        m_hardwareGateway;
+
     IRenderer*              m_renderer;
+    IControlsManager*       m_controlsmanager;
 };
 
 #endif //__TB_BASICSCENE__

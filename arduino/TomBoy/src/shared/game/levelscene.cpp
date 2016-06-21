@@ -22,7 +22,7 @@ bool LevelScene::setup()
     bool success = BasicScene::setup();
 
     m_objects = new IGameObject*[1];
-    m_objects[0] = new Player(ASSET_PLAYER);
+    m_objects[0] = new Player(this, ASSET_PLAYER);
 
     return success;
 }

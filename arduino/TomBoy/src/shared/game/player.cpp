@@ -8,8 +8,16 @@ Player::Player()
 
 }
 
-Player::Player(const bool* pixels)
-    : Sprite(pixels)
+Player::Player(IScene* scene)
+    : Sprite(scene)
+    , m_speedX(5.0f)
+    , m_speedY(5.0f)
+{
+
+}
+
+Player::Player(IScene* scene, const bool* pixels)
+    : Sprite(scene, pixels)
     , m_speedX(5.0f)
     , m_speedY(5.0f)
 {
@@ -18,6 +26,11 @@ Player::Player(const bool* pixels)
 
 bool Player::update(float dt)
 {
+    if (m_scene->getControlsManager().isButtonPressed(IControlsDriver::BUTTON_A))
+    {
+        reset();
+    }
+
     m_x += m_speedX * dt;
     if (m_x < 0)
     {
@@ -43,4 +56,13 @@ bool Player::update(float dt)
     }
 
     return true;
+}
+
+void Player::reset()
+{
+    m_x = 0;
+    m_y = 0;
+
+    m_speedX = 5.0f;
+    m_speedY = 5.0f;
 }

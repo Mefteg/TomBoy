@@ -1,6 +1,7 @@
 #ifndef __TB_IGAMEOBJECT__
 #define __TB_IGAMEOBJECT__
 
+#include "../scene/iscene.h"
 #include "../renderer/irenderer.h"
 
 class IGameObject

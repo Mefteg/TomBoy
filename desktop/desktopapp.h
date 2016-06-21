@@ -5,8 +5,6 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "desktopdisplaydriver.h"
-
 class DesktopApp : public BasicApp
 {
 public:

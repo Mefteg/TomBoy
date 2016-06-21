@@ -3,8 +3,6 @@
 
 #include "irenderer.h"
 
-#include "../hardware/idisplaydriver.h"
-
 class BasicRenderer : public IRenderer
 {
 public:

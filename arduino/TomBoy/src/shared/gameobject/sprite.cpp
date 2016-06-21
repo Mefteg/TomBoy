@@ -1,21 +1,34 @@
 #include "sprite.h"
 
 Sprite::Sprite()
-: m_x(0)
-, m_y(0)
-, m_width(4)
-, m_height(4)
-, m_pixels(0)
+    : m_scene(nullptr)
+    , m_x(0)
+    , m_y(0)
+    , m_width(4)
+    , m_height(4)
+    , m_pixels(0)
 {
 
 }
 
-Sprite::Sprite(const bool* pixels)
-: m_x(0)
-, m_y(0)
-, m_width(4)
-, m_height(4)
-, m_pixels(pixels)
+Sprite::Sprite(IScene* scene)
+    : m_scene(scene)
+    , m_x(0)
+    , m_y(0)
+    , m_width(4)
+    , m_height(4)
+    , m_pixels(0)
+{
+
+}
+
+Sprite::Sprite(IScene* scene, const bool* pixels)
+    : m_scene(scene)
+    , m_x(0)
+    , m_y(0)
+    , m_width(4)
+    , m_height(4)
+    , m_pixels(pixels)
 {
 
 }

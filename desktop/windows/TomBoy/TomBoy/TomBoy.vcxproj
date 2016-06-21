@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\app\basicapp.cpp" />
+    <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\controlsmanager\basiccontrolsmanager.cpp" />
     <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\gameobject\sprite.cpp" />
     <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\game\levelscene.cpp" />
     <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\game\player.cpp" />
@@ -27,17 +28,21 @@
     <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\renderer\basicrenderer.cpp" />
     <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\scene\basicscene.cpp" />
     <ClCompile Include="..\..\..\desktopapp.cpp" />
+    <ClCompile Include="..\..\..\desktopcontrolsdriver.cpp" />
     <ClCompile Include="..\..\..\desktopdisplaydriver.cpp" />
     <ClCompile Include="..\..\..\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\app\basicapp.h" />
     <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\app\iapp.h" />
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\controlsmanager\basiccontrolsmanager.h" />
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\controlsmanager\icontrolsmanager.h" />
     <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\gameobject\igameobject.h" />
     <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\gameobject\sprite.h" />
     <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\game\assets.h" />
     <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\game\levelscene.h" />
     <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\game\player.h" />
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\hardware\icontrolsdriver.h" />
     <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\hardware\idisplaydriver.h" />
     <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\hardware\hardwaregateway.h" />
     <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\hardware\idriver.h" />
@@ -47,6 +52,7 @@
     <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\scene\iscene.h" />
     <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\tomboydefines.h" />
     <ClInclude Include="..\..\..\desktopapp.h" />
+    <ClInclude Include="..\..\..\desktopcontrolsdriver.h" />
     <ClInclude Include="..\..\..\desktopdisplaydriver.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

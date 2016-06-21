@@ -1,7 +1,12 @@
 #ifndef __TB_SCENE__
 #define __TB_SCENE__
 
+#include "../renderer/irenderer.h"
+#include "../controlsmanager/icontrolsmanager.h"
+
 #include "../gameobject/igameobject.h"
+
+class IGameObject;
 
 class IScene
 {
@@ -12,8 +17,11 @@ public:
     virtual bool            update(float dt) = 0;
     virtual bool            render() = 0;
 
-    virtual IGameObject**   getGameObjects() const = 0;
-    virtual unsigned int    getNbGameObjects() const = 0;
+    virtual IRenderer&          getRenderer() const = 0;
+    virtual IControlsManager&   getControlsManager() const = 0;
+
+    virtual IGameObject**       getGameObjects() const = 0;
+    virtual unsigned int        getNbGameObjects() const = 0;
 };
 
 #endif //__TB_SCENE__

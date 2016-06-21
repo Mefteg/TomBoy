@@ -34,6 +34,9 @@
     <Filter Include="Source Files\shared\renderer">
       <UniqueIdentifier>{4dfdcf12-c499-4bd6-9fdf-3a7f71bb0b6e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\shared\controlsmanager">
+      <UniqueIdentifier>{52b94264-bc2e-4e7b-9476-1cc7d50f4ae6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\desktopapp.cpp">
@@ -65,6 +68,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\hardware\hardwaregateway.cpp">
       <Filter>Source Files\shared\hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\desktopcontrolsdriver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\controlsmanager\basiccontrolsmanager.cpp">
+      <Filter>Source Files\shared\controlsmanager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +127,18 @@
     </ClInclude>
     <ClInclude Include="..\..\..\desktopdisplaydriver.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\hardware\icontrolsdriver.h">
+      <Filter>Source Files\shared\hardware</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\desktopcontrolsdriver.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\controlsmanager\icontrolsmanager.h">
+      <Filter>Source Files\shared\controlsmanager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\controlsmanager\basiccontrolsmanager.h">
+      <Filter>Source Files\shared\controlsmanager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

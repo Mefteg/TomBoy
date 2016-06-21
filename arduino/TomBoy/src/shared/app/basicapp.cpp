@@ -3,11 +3,13 @@
 BasicApp::BasicApp()
 {
     // create drivers
+    // create scene(s)
 }
 
 BasicApp::~BasicApp()
 {
-    delete m_scene;
+    // delete scene(s)
+    // delete drivers
 }
 
 bool BasicApp::setup()

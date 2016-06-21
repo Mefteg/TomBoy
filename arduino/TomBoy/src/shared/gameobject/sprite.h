@@ -7,7 +7,8 @@ class Sprite : public IGameObject
 {
 public:
     Sprite();
-    Sprite(const bool* pixels);
+    Sprite(IScene* scene);
+    Sprite(IScene* scene, const bool* pixels);
     virtual ~Sprite();
 
     virtual bool    update(float dt) override;
@@ -19,6 +20,8 @@ public:
     void            setPosition(float x, float y);
 
 protected:
+    IScene*         m_scene;
+
     float           m_x;
     float           m_y;
     unsigned int    m_width;
