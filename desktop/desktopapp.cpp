@@ -1,11 +1,11 @@
 #include "desktopapp.h"
 
-#include "../arduino/TomBoy/src/shared/tomboydefines.h"
+#include "../shared/lib/api/tomboydefines.h"
 
 #include "desktopdisplaydriver.h"
 #include "desktopcontrolsdriver.h"
 
-#include "../arduino/TomBoy/src/shared/game/levelscene.h"
+#include "../shared/lib/game/levelscene.h"
 
 DesktopApp::DesktopApp()
     : m_window(sf::VideoMode(SCREEN_WIDTH * 3, SCREEN_HEIGHT * 3), "TomBoy") // width must be >= 116

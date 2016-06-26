@@ -1,7 +1,7 @@
 #ifndef __TB_DESKTOPDISPLAYDRIVER__
 #define __TB_DESKTOPDISPLAYDRIVER__
 
-#include "../arduino/TomBoy/src/shared/hardware/idisplaydriver.h"
+#include "../shared/lib/api/hardware/idisplaydriver.h"
 
 #include <SFML/Graphics.hpp>
 

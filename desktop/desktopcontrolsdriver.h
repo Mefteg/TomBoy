@@ -1,7 +1,7 @@
 #ifndef __TB_DESKTOPCONTROLSDRIVER__
 #define __TB_DESKTOPCONTROLSDRIVER__
 
-#include "../arduino/TomBoy/src/shared/hardware/icontrolsdriver.h"
+#include "../shared/lib/api/hardware/icontrolsdriver.h"
 
 class DesktopControlsDriver : public IControlsDriver
 {
