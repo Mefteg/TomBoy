@@ -1,7 +1,7 @@
 #ifndef __TB_DESKTOPAPP__
 #define __TB_DESKTOPAPP__
 
-#include "../arduino/TomBoy/src/shared/app/basicapp.h"
+#include "../shared/lib/api/app/basicapp.h"
 
 #include <SFML/Graphics.hpp>
 

@@ -1,6 +1,6 @@
 #include "desktopdisplaydriver.h"
 
-#include "../arduino/TomBoy/src/shared/tomboydefines.h"
+#include "../shared/lib/api/tomboydefines.h"
 
 DesktopDisplayDriver::DesktopDisplayDriver(sf::RenderWindow* window)
     : m_pixels(0)

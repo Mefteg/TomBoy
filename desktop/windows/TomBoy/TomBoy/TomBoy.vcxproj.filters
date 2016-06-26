@@ -14,31 +14,37 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Source Files\shared">
-      <UniqueIdentifier>{24db5d49-423a-4da7-a6df-29674a071373}</UniqueIdentifier>
+      <UniqueIdentifier>{062df634-92b4-40d0-9b93-011bcfb5e297}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\shared\game">
-      <UniqueIdentifier>{ce385466-0006-4c94-a127-3848d0127b25}</UniqueIdentifier>
+    <Filter Include="Source Files\shared\lib">
+      <UniqueIdentifier>{006c80d2-f25d-4097-bd05-64bf03a8e98f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\shared\gameobject">
-      <UniqueIdentifier>{803864c8-d6f7-4d85-9937-0ee46f6e0022}</UniqueIdentifier>
+    <Filter Include="Source Files\shared\lib\api">
+      <UniqueIdentifier>{357f00bd-ab88-43e7-afa1-29b64aa00efc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\shared\hardware">
-      <UniqueIdentifier>{31436fed-6726-4b81-a27e-260c44000bd9}</UniqueIdentifier>
+    <Filter Include="Source Files\shared\lib\api\app">
+      <UniqueIdentifier>{acad762d-d468-4e28-9a8d-adf8c5b5981d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\shared\scene">
-      <UniqueIdentifier>{d321c0b4-8ee0-48bb-b674-8867329b24fb}</UniqueIdentifier>
+    <Filter Include="Source Files\shared\lib\api\controlsmanager">
+      <UniqueIdentifier>{279da817-dfb7-4344-9ce9-f841cf846715}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\shared\app">
-      <UniqueIdentifier>{e9f36076-be8c-4534-a107-3535fd75ee87}</UniqueIdentifier>
+    <Filter Include="Source Files\shared\lib\api\gameobject">
+      <UniqueIdentifier>{479d1f42-5751-4615-9539-8b7ab697281d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\shared\renderer">
-      <UniqueIdentifier>{4dfdcf12-c499-4bd6-9fdf-3a7f71bb0b6e}</UniqueIdentifier>
+    <Filter Include="Source Files\shared\lib\api\hardware">
+      <UniqueIdentifier>{ce29c305-2545-4cc2-b8c2-074748aebaf9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\shared\controlsmanager">
-      <UniqueIdentifier>{52b94264-bc2e-4e7b-9476-1cc7d50f4ae6}</UniqueIdentifier>
+    <Filter Include="Source Files\shared\lib\api\renderer">
+      <UniqueIdentifier>{618a2d6b-800b-4110-a15d-32052dfb1e3c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\shared\utils">
-      <UniqueIdentifier>{1b0aa26d-21fa-4bb7-8227-d5a9e680a8f9}</UniqueIdentifier>
+    <Filter Include="Source Files\shared\lib\api\scene">
+      <UniqueIdentifier>{210eeb22-e00b-47b5-8937-a41b3ef5f7b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shared\lib\api\utils">
+      <UniqueIdentifier>{980866b5-57c7-4470-a5eb-d6acccbc0414}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shared\lib\game">
+      <UniqueIdentifier>{38e0b2b7-7375-4af3-9ad2-729fc7f6373a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -48,106 +54,106 @@
     <ClCompile Include="..\..\..\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\game\levelscene.cpp">
-      <Filter>Source Files\shared\game</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\gameobject\sprite.cpp">
-      <Filter>Source Files\shared\gameobject</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\game\player.cpp">
-      <Filter>Source Files\shared\game</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\scene\basicscene.cpp">
-      <Filter>Source Files\shared\scene</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\app\basicapp.cpp">
-      <Filter>Source Files\shared\app</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\renderer\basicrenderer.cpp">
-      <Filter>Source Files\shared\renderer</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\desktopdisplaydriver.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\hardware\hardwaregateway.cpp">
-      <Filter>Source Files\shared\hardware</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\desktopcontrolsdriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\arduino\TomBoy\src\shared\controlsmanager\basiccontrolsmanager.cpp">
-      <Filter>Source Files\shared\controlsmanager</Filter>
+    <ClCompile Include="..\..\..\..\shared\lib\game\levelscene.cpp">
+      <Filter>Source Files\shared\lib\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\lib\game\player.cpp">
+      <Filter>Source Files\shared\lib\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\lib\api\app\basicapp.cpp">
+      <Filter>Source Files\shared\lib\api\app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\lib\api\controlsmanager\basiccontrolsmanager.cpp">
+      <Filter>Source Files\shared\lib\api\controlsmanager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\lib\api\gameobject\sprite.cpp">
+      <Filter>Source Files\shared\lib\api\gameobject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\lib\api\hardware\hardwaregateway.cpp">
+      <Filter>Source Files\shared\lib\api\hardware</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\lib\api\renderer\basicrenderer.cpp">
+      <Filter>Source Files\shared\lib\api\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\lib\api\scene\basicscene.cpp">
+      <Filter>Source Files\shared\lib\api\scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\desktopapp.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\game\levelscene.h">
-      <Filter>Source Files\shared\game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\gameobject\igameobject.h">
-      <Filter>Source Files\shared\gameobject</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\gameobject\sprite.h">
-      <Filter>Source Files\shared\gameobject</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\tomboydefines.h">
-      <Filter>Source Files\shared</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\game\assets.h">
-      <Filter>Source Files\shared\game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\game\player.h">
-      <Filter>Source Files\shared\game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\hardware\hardwaregateway.h">
-      <Filter>Source Files\shared\hardware</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\hardware\idisplaydriver.h">
-      <Filter>Source Files\shared\hardware</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\hardware\idriver.h">
-      <Filter>Source Files\shared\hardware</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\scene\iscene.h">
-      <Filter>Source Files\shared\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\scene\basicscene.h">
-      <Filter>Source Files\shared\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\app\iapp.h">
-      <Filter>Source Files\shared\app</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\renderer\irenderer.h">
-      <Filter>Source Files\shared\renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\app\basicapp.h">
-      <Filter>Source Files\shared\app</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\renderer\basicrenderer.h">
-      <Filter>Source Files\shared\renderer</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\desktopdisplaydriver.h">
       <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\hardware\icontrolsdriver.h">
-      <Filter>Source Files\shared\hardware</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\desktopcontrolsdriver.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\controlsmanager\icontrolsmanager.h">
-      <Filter>Source Files\shared\controlsmanager</Filter>
+    <ClInclude Include="..\..\..\..\shared\lib\game\assets.h">
+      <Filter>Source Files\shared\lib\game</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\controlsmanager\basiccontrolsmanager.h">
-      <Filter>Source Files\shared\controlsmanager</Filter>
+    <ClInclude Include="..\..\..\..\shared\lib\game\levelscene.h">
+      <Filter>Source Files\shared\lib\game</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\utils\arraylist.h">
-      <Filter>Source Files\shared\utils</Filter>
+    <ClInclude Include="..\..\..\..\shared\lib\game\player.h">
+      <Filter>Source Files\shared\lib\game</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\utils\iarraylist.h">
-      <Filter>Source Files\shared\utils</Filter>
+    <ClInclude Include="..\..\..\..\shared\lib\api\app\basicapp.h">
+      <Filter>Source Files\shared\lib\api\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\app\iapp.h">
+      <Filter>Source Files\shared\lib\api\app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\controlsmanager\basiccontrolsmanager.h">
+      <Filter>Source Files\shared\lib\api\controlsmanager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\controlsmanager\icontrolsmanager.h">
+      <Filter>Source Files\shared\lib\api\controlsmanager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\gameobject\igameobject.h">
+      <Filter>Source Files\shared\lib\api\gameobject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\gameobject\sprite.h">
+      <Filter>Source Files\shared\lib\api\gameobject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\hardware\hardwaregateway.h">
+      <Filter>Source Files\shared\lib\api\hardware</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\hardware\icontrolsdriver.h">
+      <Filter>Source Files\shared\lib\api\hardware</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\hardware\idisplaydriver.h">
+      <Filter>Source Files\shared\lib\api\hardware</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\hardware\idriver.h">
+      <Filter>Source Files\shared\lib\api\hardware</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\renderer\basicrenderer.h">
+      <Filter>Source Files\shared\lib\api\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\renderer\irenderer.h">
+      <Filter>Source Files\shared\lib\api\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\scene\basicscene.h">
+      <Filter>Source Files\shared\lib\api\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\scene\iscene.h">
+      <Filter>Source Files\shared\lib\api\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\utils\arraylist.h">
+      <Filter>Source Files\shared\lib\api\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\utils\iarraylist.h">
+      <Filter>Source Files\shared\lib\api\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\tomboydefines.h">
+      <Filter>Source Files\shared\lib\api</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

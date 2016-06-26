@@ -1,7 +1,7 @@
 #ifndef __TB_ARDUINODISPLAYDRIVER__
 #define __TB_ARDUINODISPLAYDRIVER__
 
-#include "shared/hardware/idisplaydriver.h"
+#include "api/hardware/idisplaydriver.h"
 
 class ArduinoDisplayDriver : public IDisplayDriver
 {

@@ -1,7 +1,7 @@
 #ifndef __TB_PLAYER__
 #define __TB_PLAYER__
 
-#include "../gameobject/sprite.h"
+#include "../api/gameobject/sprite.h"
 
 class Player : public Sprite
 {

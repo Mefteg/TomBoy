@@ -5,7 +5,7 @@
 #include "arduinodisplaydriver.h"
 #include "arduinocontrolsdriver.h"
 
-#include "shared/game/levelscene.h"
+#include "game/levelscene.h"
 
 ArduinoApp::ArduinoApp()
     : m_lastTime(0)
