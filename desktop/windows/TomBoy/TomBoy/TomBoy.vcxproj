@@ -51,6 +51,8 @@
     <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\scene\basicscene.h" />
     <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\scene\iscene.h" />
     <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\tomboydefines.h" />
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\utils\arraylist.h" />
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\utils\iarraylist.h" />
     <ClInclude Include="..\..\..\desktopapp.h" />
     <ClInclude Include="..\..\..\desktopcontrolsdriver.h" />
     <ClInclude Include="..\..\..\desktopdisplaydriver.h" />

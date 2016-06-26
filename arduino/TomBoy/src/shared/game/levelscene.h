@@ -13,11 +13,7 @@ public:
 
     virtual bool setup() override;
 
-    virtual IGameObject**   getGameObjects() const override;
-    virtual unsigned int    getNbGameObjects() const override;
-
 protected:
-    IGameObject**   m_objects;
     bool*           m_defaultPixels;
 };
 

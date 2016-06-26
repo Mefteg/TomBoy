@@ -4,6 +4,8 @@
 #include "../renderer/irenderer.h"
 #include "../controlsmanager/icontrolsmanager.h"
 
+#include "../utils/arraylist.h"
+
 #include "../gameobject/igameobject.h"
 
 class IGameObject;
@@ -20,8 +22,8 @@ public:
     virtual IRenderer&          getRenderer() const = 0;
     virtual IControlsManager&   getControlsManager() const = 0;
 
-    virtual IGameObject**       getGameObjects() const = 0;
-    virtual unsigned int        getNbGameObjects() const = 0;
+    virtual ArrayList<IGameObject*>&    getGameObjects() = 0;
+    virtual unsigned int                getNbGameObjects() const = 0;
 };
 
 #endif //__TB_SCENE__

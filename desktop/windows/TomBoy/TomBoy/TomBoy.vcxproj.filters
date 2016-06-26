@@ -37,6 +37,9 @@
     <Filter Include="Source Files\shared\controlsmanager">
       <UniqueIdentifier>{52b94264-bc2e-4e7b-9476-1cc7d50f4ae6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\shared\utils">
+      <UniqueIdentifier>{1b0aa26d-21fa-4bb7-8227-d5a9e680a8f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\desktopapp.cpp">
@@ -139,6 +142,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\controlsmanager\basiccontrolsmanager.h">
       <Filter>Source Files\shared\controlsmanager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\utils\arraylist.h">
+      <Filter>Source Files\shared\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\arduino\TomBoy\src\shared\utils\iarraylist.h">
+      <Filter>Source Files\shared\utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

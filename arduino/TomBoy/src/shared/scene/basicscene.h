@@ -18,14 +18,16 @@ public:
     virtual IRenderer&          getRenderer() const override;
     virtual IControlsManager&   getControlsManager() const override;
 
-    virtual IGameObject**       getGameObjects() const override;
-    virtual unsigned int        getNbGameObjects() const override;
+    virtual ArrayList<IGameObject*>&    getGameObjects() override;
+    virtual unsigned int                getNbGameObjects() const override;
 
 protected:
     HardwareGateway*        m_hardwareGateway;
 
     IRenderer*              m_renderer;
     IControlsManager*       m_controlsmanager;
+
+    ArrayList<IGameObject*> m_objects;
 };
 
 #endif //__TB_BASICSCENE__

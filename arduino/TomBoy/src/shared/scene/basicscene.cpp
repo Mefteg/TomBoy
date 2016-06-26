@@ -13,6 +13,13 @@ BasicScene::~BasicScene()
 {
     delete m_controlsmanager;
     delete m_renderer;
+
+    // delete all objects
+    const unsigned int nbGameObjects = m_objects.getSize();
+    for (unsigned int i = 0; i < nbGameObjects; ++i)
+    {
+        delete m_objects.at(i);
+    }
 }
 
 bool BasicScene::setup()
@@ -28,12 +35,11 @@ bool BasicScene::setup()
 
 bool BasicScene::update(float dt)
 {
-    IGameObject** objects = getGameObjects();
-    const unsigned int nbGameObjects = getNbGameObjects();
+    const unsigned int nbGameObjects = m_objects.getSize();
     // update all gameobjects
-    for (unsigned int i = 0; i < getNbGameObjects(); ++i)
+    for (unsigned int i = 0; i < nbGameObjects; ++i)
     {
-        objects[i]->update(dt);
+        m_objects.at(i)->update(dt);
     }
     return true;
 }
@@ -43,12 +49,11 @@ bool BasicScene::render()
     // clear
     m_renderer->clearPixels();
 
-    IGameObject** objects = getGameObjects();
-    const unsigned int nbGameObjects = getNbGameObjects();
+    const unsigned int nbGameObjects = m_objects.getSize();
     // display all gameobjects
     for (unsigned int i = 0; i < nbGameObjects; ++i)
     {
-        objects[i]->draw(m_renderer);
+        m_objects.at(i)->draw(m_renderer);
     }
 
     // apply
@@ -67,12 +72,12 @@ IControlsManager& BasicScene::getControlsManager() const
     return *m_controlsmanager;
 }
 
-IGameObject ** BasicScene::getGameObjects() const
+ArrayList<IGameObject*>& BasicScene::getGameObjects()
 {
-    return nullptr;
+    return m_objects;
 }
 
 unsigned int BasicScene::getNbGameObjects() const
 {
-    return 0;
+    return m_objects.getSize();
 }
