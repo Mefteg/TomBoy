@@ -1,7 +1,7 @@
 #ifndef __TB_ARDUINOCONTROLSDRIVER__
 #define __TB_ARDUINOCONTROLSDRIVER__
 
-#include "shared/hardware/icontrolsdriver.h"
+#include "api/hardware/icontrolsdriver.h"
 
 class ArduinoControlsDriver : public IControlsDriver
 {

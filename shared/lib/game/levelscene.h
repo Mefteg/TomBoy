@@ -1,7 +1,7 @@
 #ifndef __TB_LEVELSCENE__
 #define __TB_LEVELSCENE__
 
-#include "../scene/basicscene.h"
+#include "api/scene/basicscene.h"
 
 class IGameObject;
 

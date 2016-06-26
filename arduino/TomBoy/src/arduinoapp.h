@@ -1,7 +1,7 @@
 #ifndef __TB_ARDUINOAPP__
 #define __TB_ARDUINOAPP__
 
-#include "shared/app/basicapp.h"
+#include "api/app/basicapp.h"
 
 class ArduinoApp : public BasicApp
 {
