@@ -36,15 +36,8 @@ bool Player::update(float dt)
         reset();
     }
 
-    if (m_scene->getControlsManager().getAxis(IControlsDriver::AXIS_X) < 0)
-    {
-        reset();
-    }
-
-    if (m_scene->getControlsManager().getAxis(IControlsDriver::AXIS_Y) > 0)
-    {
-        reset();
-    }
+    m_speedX = m_scene->getControlsManager().getAxis(IControlsDriver::AXIS_X) * 5.0f;
+    m_speedY = m_scene->getControlsManager().getAxis(IControlsDriver::AXIS_Y) * 5.0f;
 
     m_x += m_speedX * dt;
     if (m_x < 0)

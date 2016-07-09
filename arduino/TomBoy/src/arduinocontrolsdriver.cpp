@@ -4,6 +4,8 @@
 
 #define PIN_BUTTON_A 4
 #define PIN_BUTTON_B 2
+#define PIN_AXIS_X 0
+#define PIN_AXIS_Y 1
 
 ArduinoControlsDriver::ArduinoControlsDriver()
 {
@@ -38,9 +40,31 @@ bool ArduinoControlsDriver::isButtonPressed(ButtonControls button) const
 
 float ArduinoControlsDriver::getAxis(AxisControls axis) const
 {
-    float delta = 0;
-
     // read joystick values (x and y axis)
+    switch (axis) {
+        case AXIS_X:
+        return analogAxisValueToFloat(analogRead(PIN_AXIS_X));
+        case AXIS_Y:
+        return -analogAxisValueToFloat(analogRead(PIN_AXIS_Y));
+    }
+}
 
-    return delta;
+float ArduinoControlsDriver::analogAxisValueToFloat(unsigned int value) const
+{
+    float ratio = -(((float) value) - 512.0f) / 256;
+    if (ratio > -0.1f && ratio < 0.1f)
+    {
+        ratio = 0;
+    }
+    
+    if (ratio < -1)
+    {
+        ratio = -1;
+    }
+    else if (ratio > 1)
+    {
+        ratio = 1;
+    }
+
+    return ratio;
 }
