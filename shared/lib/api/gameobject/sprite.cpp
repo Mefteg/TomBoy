@@ -47,7 +47,7 @@ void Sprite::draw(IRenderer* renderer) const
 {
     if (m_image)
     {
-        m_image->draw(renderer, m_x, m_y);
+        m_image->draw(renderer, (unsigned int) m_x, (unsigned int) m_y);
     }
 }
 

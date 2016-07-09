@@ -31,11 +31,6 @@ bool Player::update(float dt)
         reset();
     }
 
-    if (m_scene->getControlsManager().isButtonPressed(IControlsDriver::BUTTON_B))
-    {
-        reset();
-    }
-
     m_speedX = m_scene->getControlsManager().getAxis(IControlsDriver::AXIS_X) * 5.0f;
     m_speedY = m_scene->getControlsManager().getAxis(IControlsDriver::AXIS_Y) * 5.0f;
 

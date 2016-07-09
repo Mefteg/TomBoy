@@ -16,7 +16,7 @@ public:
 
 protected:
     HardwareGateway m_hardwareGateway;
-    IScene*         m_scene;
+    ISceneManager*  m_sceneManager;
 };
 
 #endif //__TB_BASICAPP__

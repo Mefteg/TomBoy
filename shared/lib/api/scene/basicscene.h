@@ -3,12 +3,13 @@
 
 #include "iscene.h"
 
+#include "iscenemanager.h"
 #include "../hardware/hardwaregateway.h"
 
 class BasicScene : public IScene
 {
 public:
-    BasicScene(HardwareGateway* hardwareGateway);
+    BasicScene(ISceneManager* sceneManager, HardwareGateway* hardwareGateway);
     virtual ~BasicScene();
 
     virtual bool            setup() override;
@@ -22,6 +23,7 @@ public:
     virtual unsigned int                getNbGameObjects() const override;
 
 protected:
+    ISceneManager*          m_sceneManager;
     HardwareGateway*        m_hardwareGateway;
 
     IRenderer*              m_renderer;

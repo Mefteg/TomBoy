@@ -1,7 +1,7 @@
 #ifndef __TB_IAPP__
 #define __TB_IAPP__
 
-class IScene;
+class ISceneManager;
 class IRenderer;
 
 class IApp

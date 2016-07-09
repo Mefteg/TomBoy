@@ -93,6 +93,12 @@
     <ClCompile Include="..\..\..\..\shared\lib\api\graphics\image.cpp">
       <Filter>Source Files\shared\lib\api\graphics</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\lib\api\scene\basicscenemanager.cpp">
+      <Filter>Source Files\shared\lib\api\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\lib\game\gamescenemanager.cpp">
+      <Filter>Source Files\shared\lib\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\desktopapp.h">
@@ -169,6 +175,15 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\shared\lib\api\graphics\image.h">
       <Filter>Source Files\shared\lib\api\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\scene\iscenemanager.h">
+      <Filter>Source Files\shared\lib\api\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\scene\basicscenemanager.h">
+      <Filter>Source Files\shared\lib\api\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\game\gamescenemanager.h">
+      <Filter>Source Files\shared\lib\game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,8 +3,9 @@
 #include "../renderer/basicrenderer.h"
 #include "../controlsmanager/basiccontrolsmanager.h"
 
-BasicScene::BasicScene(HardwareGateway* hardwareGateway)
-    : m_hardwareGateway(hardwareGateway)
+BasicScene::BasicScene(ISceneManager* sceneManager, HardwareGateway* hardwareGateway)
+    : m_sceneManager(sceneManager)
+    , m_hardwareGateway(hardwareGateway)
 {
 
 }

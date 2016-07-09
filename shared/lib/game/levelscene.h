@@ -8,10 +8,11 @@
 class LevelScene : public BasicScene
 {
 public:
-    LevelScene(HardwareGateway* hardwareGateway);
+    LevelScene(ISceneManager* sceneManager, HardwareGateway* hardwareGateway);
     virtual ~LevelScene();
 
-    virtual bool setup() override;
+    virtual bool    setup() override;
+    virtual bool    update(float dt) override;
 
 protected:
     Texture m_texturePlayer;

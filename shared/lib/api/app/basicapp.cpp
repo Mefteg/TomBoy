@@ -3,12 +3,12 @@
 BasicApp::BasicApp()
 {
     // create drivers
-    // create scene(s)
+    // create scene manager
 }
 
 BasicApp::~BasicApp()
 {
-    // delete scene(s)
+    // delete scene manager
     // delete drivers
 }
 

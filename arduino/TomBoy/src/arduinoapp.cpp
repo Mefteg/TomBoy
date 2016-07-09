@@ -5,7 +5,7 @@
 #include "arduinodisplaydriver.h"
 #include "arduinocontrolsdriver.h"
 
-#include "game/levelscene.h"
+#include "game/gamescenemanager.h"
 
 ArduinoApp::ArduinoApp()
     : m_lastTime(0)
@@ -15,11 +15,13 @@ ArduinoApp::ArduinoApp()
     m_hardwareGateway.display   = new ArduinoDisplayDriver();
     m_hardwareGateway.controls  = new ArduinoControlsDriver();
 
-    m_scene = new LevelScene(&m_hardwareGateway);
+    m_sceneManager = new GameSceneManager(&m_hardwareGateway);
 }
 
 ArduinoApp::~ArduinoApp()
 {
+    delete m_sceneManager;
+
     delete m_hardwareGateway.controls;
     delete m_hardwareGateway.display;
 }
@@ -30,8 +32,6 @@ bool ArduinoApp::setup()
 
     success &= m_hardwareGateway.display->init();
     success &= m_hardwareGateway.controls->init();
-
-    success &= m_scene->setup();
 
     return success;
 }
@@ -46,9 +46,9 @@ bool ArduinoApp::loop()
         float elapsedTime = ((float) (currentTime - m_lastTime)) / 1000;
         m_lastTime = currentTime;
         // update scene
-        loopAgain |= m_scene->update(elapsedTime);
+        loopAgain |= m_sceneManager->updateCurrentScene(elapsedTime);
         // render scene
-        loopAgain |= m_scene->render();
+        loopAgain |= m_sceneManager->renderCurrentScene();
 
         delay(10);
     }

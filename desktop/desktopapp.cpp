@@ -5,7 +5,7 @@
 #include "desktopdisplaydriver.h"
 #include "desktopcontrolsdriver.h"
 
-#include "../shared/lib/game/levelscene.h"
+#include "../shared/lib/game/gamescenemanager.h"
 
 DesktopApp::DesktopApp()
     : m_window(sf::VideoMode(SCREEN_WIDTH * 3, SCREEN_HEIGHT * 3), "TomBoy") // width must be >= 116
@@ -13,12 +13,12 @@ DesktopApp::DesktopApp()
     m_hardwareGateway.display   = new DesktopDisplayDriver(&m_window);
     m_hardwareGateway.controls  = new DesktopControlsDriver();
 
-    m_scene = new LevelScene(&m_hardwareGateway);
+    m_sceneManager = new GameSceneManager(&m_hardwareGateway);
 }
 
 DesktopApp::~DesktopApp()
 {
-    delete m_scene;
+    delete m_sceneManager;
 
     delete m_hardwareGateway.controls;
     delete m_hardwareGateway.display;
@@ -29,8 +29,6 @@ bool DesktopApp::setup()
     bool success = true;
 
     success &= m_hardwareGateway.display->init();
-
-    success &= m_scene->setup();
 
     return success;
 }
@@ -53,9 +51,9 @@ bool DesktopApp::loop()
     {
         sf::Time elapsedTime = m_clock.restart();
         // update scene
-        loopAgain |= m_scene->update(elapsedTime.asSeconds());
+        loopAgain |= m_sceneManager->updateCurrentScene(elapsedTime.asSeconds());
         // render scene
-        loopAgain |= m_scene->render();
+        loopAgain |= m_sceneManager->renderCurrentScene();
     }
 
     return loopAgain;
