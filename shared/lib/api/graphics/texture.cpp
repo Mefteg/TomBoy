@@ -9,7 +9,5 @@ Texture::Texture(const bool * pixels, unsigned int width, unsigned int height)
 
 bool Texture::getPixel(unsigned int x, unsigned int y) const
 {
-    bool pixel = m_pixels[y * m_width + x];
-    return pixel;
-    //return m_pixels[y * m_width + x];
+    return m_pixels[y * m_width + x];
 }
