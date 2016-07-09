@@ -3,7 +3,7 @@
 
 #include "../api/scene/basicscene.h"
 
-class IGameObject;
+#include "../api/graphics/image.h"
 
 class LevelScene : public BasicScene
 {
@@ -14,7 +14,8 @@ public:
     virtual bool setup() override;
 
 protected:
-    bool*           m_defaultPixels;
+    Texture m_texturePlayer;
+    Image   m_imagePlayer;
 };
 
 #endif //__TB_LEVELSCENE__

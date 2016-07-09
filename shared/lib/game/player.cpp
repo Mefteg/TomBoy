@@ -16,8 +16,8 @@ Player::Player(IScene* scene)
 
 }
 
-Player::Player(IScene* scene, const bool* pixels)
-    : Sprite(scene, pixels)
+Player::Player(IScene* scene, const Image* image)
+    : Sprite(scene, image)
     , m_speedX(5.0f)
     , m_speedY(5.0f)
 {

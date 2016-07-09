@@ -22,6 +22,8 @@
     <ClCompile Include="..\..\..\..\shared\lib\api\app\basicapp.cpp" />
     <ClCompile Include="..\..\..\..\shared\lib\api\controlsmanager\basiccontrolsmanager.cpp" />
     <ClCompile Include="..\..\..\..\shared\lib\api\gameobject\sprite.cpp" />
+    <ClCompile Include="..\..\..\..\shared\lib\api\graphics\image.cpp" />
+    <ClCompile Include="..\..\..\..\shared\lib\api\graphics\texture.cpp" />
     <ClCompile Include="..\..\..\..\shared\lib\api\hardware\hardwaregateway.cpp" />
     <ClCompile Include="..\..\..\..\shared\lib\api\renderer\basicrenderer.cpp" />
     <ClCompile Include="..\..\..\..\shared\lib\api\scene\basicscene.cpp" />
@@ -39,6 +41,8 @@
     <ClInclude Include="..\..\..\..\shared\lib\api\controlsmanager\icontrolsmanager.h" />
     <ClInclude Include="..\..\..\..\shared\lib\api\gameobject\igameobject.h" />
     <ClInclude Include="..\..\..\..\shared\lib\api\gameobject\sprite.h" />
+    <ClInclude Include="..\..\..\..\shared\lib\api\graphics\image.h" />
+    <ClInclude Include="..\..\..\..\shared\lib\api\graphics\texture.h" />
     <ClInclude Include="..\..\..\..\shared\lib\api\hardware\hardwaregateway.h" />
     <ClInclude Include="..\..\..\..\shared\lib\api\hardware\icontrolsdriver.h" />
     <ClInclude Include="..\..\..\..\shared\lib\api\hardware\idisplaydriver.h" />

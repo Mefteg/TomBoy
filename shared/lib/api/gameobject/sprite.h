@@ -3,12 +3,14 @@
 
 #include "igameobject.h"
 
+#include "../graphics/image.h"
+
 class Sprite : public IGameObject
 {
 public:
     Sprite();
     Sprite(IScene* scene);
-    Sprite(IScene* scene, const bool* pixels);
+    Sprite(IScene* scene, const Image* image);
     virtual ~Sprite();
 
     virtual bool    update(float dt) override;
@@ -27,7 +29,7 @@ protected:
     unsigned int    m_width;
     unsigned int    m_height;
 
-    const bool*     m_pixels;
+    const Image*    m_image;
 };
 
 #endif //__TB_SPRITE__

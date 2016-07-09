@@ -6,7 +6,7 @@ Sprite::Sprite()
     , m_y(0)
     , m_width(4)
     , m_height(4)
-    , m_pixels(0)
+    , m_image(0)
 {
 
 }
@@ -17,18 +17,18 @@ Sprite::Sprite(IScene* scene)
     , m_y(0)
     , m_width(4)
     , m_height(4)
-    , m_pixels(0)
+    , m_image(0)
 {
 
 }
 
-Sprite::Sprite(IScene* scene, const bool* pixels)
+Sprite::Sprite(IScene* scene, const Image* image)
     : m_scene(scene)
     , m_x(0)
     , m_y(0)
     , m_width(4)
     , m_height(4)
-    , m_pixels(pixels)
+    , m_image(image)
 {
 
 }
@@ -45,19 +45,9 @@ bool Sprite::update(float dt)
 
 void Sprite::draw(IRenderer* renderer) const
 {
-    if (!m_pixels)
+    if (m_image)
     {
-        return;
-    }
-
-    for (unsigned int i=0; i<m_height; ++i)
-    {
-        unsigned int screenLine = (unsigned int) m_y + i;
-        unsigned int spriteLine = i * m_width;
-        for (unsigned int j=0; j<m_width; ++j)
-        {
-            renderer->setPixel((unsigned int) m_x + j, screenLine, (IRenderer::Color) m_pixels[spriteLine + j]);
-        }
+        m_image->draw(renderer, m_x, m_y);
     }
 }
 

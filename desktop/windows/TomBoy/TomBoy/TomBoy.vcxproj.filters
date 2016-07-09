@@ -46,6 +46,9 @@
     <Filter Include="Source Files\shared\lib\game">
       <UniqueIdentifier>{38e0b2b7-7375-4af3-9ad2-729fc7f6373a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\shared\lib\api\graphics">
+      <UniqueIdentifier>{2d9bef3f-7e07-4d21-8c36-e8633c66e62c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\desktopapp.cpp">
@@ -83,6 +86,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\shared\lib\api\scene\basicscene.cpp">
       <Filter>Source Files\shared\lib\api\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\lib\api\graphics\texture.cpp">
+      <Filter>Source Files\shared\lib\api\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\lib\api\graphics\image.cpp">
+      <Filter>Source Files\shared\lib\api\graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +163,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\shared\lib\api\tomboydefines.h">
       <Filter>Source Files\shared\lib\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\graphics\texture.h">
+      <Filter>Source Files\shared\lib\api\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\graphics\image.h">
+      <Filter>Source Files\shared\lib\api\graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

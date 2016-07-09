@@ -8,7 +8,7 @@ class Player : public Sprite
 public:
     Player();
     Player(IScene* scene);
-    Player(IScene* scene, const bool* pixels);
+    Player(IScene* scene, const Image* pixels);
 
     virtual bool    update(float dt) override;
 
