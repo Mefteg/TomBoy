@@ -3,6 +3,7 @@
 #include "assets.h"
 
 #include "player.h"
+#include "coin.h"
 
 LevelScene::LevelScene(ISceneManager* sceneManager, HardwareGateway* hardwareGateway)
     : BasicScene(sceneManager, hardwareGateway)
@@ -27,6 +28,13 @@ bool LevelScene::setup()
     p0->reset();
 
     m_objects.push_back(p0);
+
+    Coin* coin0 = new Coin(this, &m_imageCoin);
+    coin0->setSize(m_imageCoin.getWidth(), m_imageCoin.getHeight());
+    coin0->reset();
+    coin0->setActive(true);
+
+    m_objects.push_back(coin0);
 
     return success;
 }

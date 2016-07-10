@@ -28,6 +28,7 @@
     <ClCompile Include="..\..\..\..\shared\lib\api\renderer\basicrenderer.cpp" />
     <ClCompile Include="..\..\..\..\shared\lib\api\scene\basicscene.cpp" />
     <ClCompile Include="..\..\..\..\shared\lib\api\scene\basicscenemanager.cpp" />
+    <ClCompile Include="..\..\..\..\shared\lib\game\coin.cpp" />
     <ClCompile Include="..\..\..\..\shared\lib\game\gamescenemanager.cpp" />
     <ClCompile Include="..\..\..\..\shared\lib\game\levelscene.cpp" />
     <ClCompile Include="..\..\..\..\shared\lib\game\player.cpp" />
@@ -59,6 +60,7 @@
     <ClInclude Include="..\..\..\..\shared\lib\api\utils\arraylist.h" />
     <ClInclude Include="..\..\..\..\shared\lib\api\utils\iarraylist.h" />
     <ClInclude Include="..\..\..\..\shared\lib\game\assets.h" />
+    <ClInclude Include="..\..\..\..\shared\lib\game\coin.h" />
     <ClInclude Include="..\..\..\..\shared\lib\game\gamescenemanager.h" />
     <ClInclude Include="..\..\..\..\shared\lib\game\levelscene.h" />
     <ClInclude Include="..\..\..\..\shared\lib\game\player.h" />

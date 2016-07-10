@@ -99,6 +99,9 @@
     <ClCompile Include="..\..\..\..\shared\lib\game\gamescenemanager.cpp">
       <Filter>Source Files\shared\lib\game</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\lib\game\coin.cpp">
+      <Filter>Source Files\shared\lib\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\desktopapp.h">
@@ -183,6 +186,9 @@
       <Filter>Source Files\shared\lib\api\scene</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\shared\lib\game\gamescenemanager.h">
+      <Filter>Source Files\shared\lib\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\game\coin.h">
       <Filter>Source Files\shared\lib\game</Filter>
     </ClInclude>
   </ItemGroup>

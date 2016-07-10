@@ -26,5 +26,9 @@ void BasicRenderer::applyPixels()
 void BasicRenderer::setPixel(unsigned int x, unsigned int y, Color color)
 {
     // simply use the driver
-    m_displayDriver->setPixel(x, y, color);
+    // use white as "transparent"
+    if (color == Color_BLACK)
+    {
+        m_displayDriver->setPixel(x, y, color);
+    }
 }
