@@ -16,10 +16,15 @@ public:
     virtual bool    update(float dt) override;
     virtual void    draw(IRenderer* renderer) const override;
 
+    virtual void    reset() override;
+
     float           getX() const { return m_x; }
     float           getY() const { return m_y; }
+    unsigned int    getWidth() const { return m_width; }
+    unsigned int    getHeight() const { return m_height; }
 
     void            setPosition(float x, float y);
+    void            setSize(unsigned int w, unsigned int h);
 
 protected:
     IScene*         m_scene;

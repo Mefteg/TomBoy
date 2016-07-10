@@ -12,11 +12,13 @@ public:
 
     virtual bool    update(float dt) override;
 
+    virtual void    reset() override;
+
 protected:
-    void    reset();
+
+    static const float PLAYER_SPEED_MAX;
 
     float   m_speedX;
-    float   m_speedY;
 };
 
 #endif //__TB_PLAYER__

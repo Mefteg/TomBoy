@@ -11,6 +11,8 @@ public:
 
     virtual bool update(float dt) = 0;
     virtual void draw(IRenderer* renderer) const = 0;
+
+    virtual void reset() = 0;
 };
 
 #endif //__TB_IGAMEOBJECT__

@@ -6,8 +6,11 @@
 
 LevelScene::LevelScene(ISceneManager* sceneManager, HardwareGateway* hardwareGateway)
     : BasicScene(sceneManager, hardwareGateway)
-    , m_texturePlayer(ASSET_PLAYER, 4, 4)
-    , m_imagePlayer(&m_texturePlayer, 0, 0, 4, 4)
+    , m_textureAssets(ASSETS, 32, 16)
+    , m_imagePlayer(&m_textureAssets, 0, 0, 12, 4)
+    , m_imageCoin(&m_textureAssets, 12, 0, 4, 4)
+    , m_imageSpike(&m_textureAssets, 16, 0, 4, 4)
+    , m_imageLife(&m_textureAssets, 0, 4, 6, 6)
 {
 }
 
@@ -20,6 +23,8 @@ bool LevelScene::setup()
     bool success = BasicScene::setup();
 
     Player* p0 = new Player(this, &m_imagePlayer);
+    p0->setSize(m_imagePlayer.getWidth(), m_imagePlayer.getHeight());
+    p0->reset();
 
     m_objects.push_back(p0);
 

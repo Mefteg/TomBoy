@@ -1,27 +1,26 @@
 #include "player.h"
 
+const float Player::PLAYER_SPEED_MAX = 20.0f;
+
 Player::Player()
     : Sprite()
-    , m_speedX(5.0f)
-    , m_speedY(5.0f)
+    , m_speedX(0.0f)
 {
-
+    reset();
 }
 
 Player::Player(IScene* scene)
     : Sprite(scene)
-    , m_speedX(5.0f)
-    , m_speedY(5.0f)
+    , m_speedX(0.0f)
 {
-
+    reset();
 }
 
 Player::Player(IScene* scene, const Image* image)
     : Sprite(scene, image)
-    , m_speedX(5.0f)
-    , m_speedY(5.0f)
+    , m_speedX(0.0f)
 {
-
+    reset();
 }
 
 bool Player::update(float dt)
@@ -31,8 +30,7 @@ bool Player::update(float dt)
         reset();
     }
 
-    m_speedX = m_scene->getControlsManager().getAxis(IControlsDriver::AXIS_X) * 5.0f;
-    m_speedY = m_scene->getControlsManager().getAxis(IControlsDriver::AXIS_Y) * 5.0f;
+    m_speedX = m_scene->getControlsManager().getAxis(IControlsDriver::AXIS_X) * PLAYER_SPEED_MAX;
 
     m_x += m_speedX * dt;
     if (m_x < 0)
@@ -46,26 +44,13 @@ bool Player::update(float dt)
         m_speedX *= -1;
     }
 
-    m_y += m_speedY * dt;
-    if (m_y < 0)
-    {
-        m_y = 0;
-        m_speedY *= -1;
-    }
-    else if (m_y + m_height > SCREEN_HEIGHT + 1)
-    {
-        m_y = (float)(SCREEN_HEIGHT - m_height);
-        m_speedY *= -1;
-    }
-
     return true;
 }
 
 void Player::reset()
 {
-    m_x = 0;
-    m_y = 0;
+    m_x = (SCREEN_WIDTH - m_width) / 2;
+    m_y = SCREEN_HEIGHT - (m_height + 2);
 
-    m_speedX = 5.0f;
-    m_speedY = 5.0f;
+    m_speedX = 0.0f;
 }

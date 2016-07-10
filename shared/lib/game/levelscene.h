@@ -15,8 +15,11 @@ public:
     virtual bool    update(float dt) override;
 
 protected:
-    Texture m_texturePlayer;
+    Texture m_textureAssets;
     Image   m_imagePlayer;
+    Image   m_imageCoin;
+    Image   m_imageSpike;
+    Image   m_imageLife;
 };
 
 #endif //__TB_LEVELSCENE__

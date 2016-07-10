@@ -11,9 +11,12 @@ public:
     Image(const Texture* texture, unsigned int originX, unsigned int originY,  unsigned int width, unsigned int height);
     virtual ~Image() {}
 
+    virtual void                draw(IRenderer* renderer, unsigned int screenPosX, unsigned int screenPosY) const;
+
     virtual IRenderer::Color    getPixel(unsigned int x, unsigned int y) const;
 
-    virtual void                draw(IRenderer* renderer, unsigned int screenPosX, unsigned int screenPosY) const;
+    unsigned int                getWidth() const { return m_width; }
+    unsigned int                getHeight() const { return m_height; }
 
 protected:
     const Texture*  m_texture;
