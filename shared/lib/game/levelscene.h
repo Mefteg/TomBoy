@@ -5,6 +5,8 @@
 
 #include "../api/graphics/image.h"
 
+class Coin;
+
 class LevelScene : public BasicScene
 {
 public:
@@ -20,6 +22,8 @@ protected:
     Image   m_imageCoin;
     Image   m_imageSpike;
     Image   m_imageLife;
+
+    ArrayList<Coin*>    m_coins;
 };
 
 #endif //__TB_LEVELSCENE__

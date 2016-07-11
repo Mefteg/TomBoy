@@ -102,6 +102,9 @@
     <ClCompile Include="..\..\..\..\shared\lib\game\coin.cpp">
       <Filter>Source Files\shared\lib\game</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\desktoprandomdriver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\desktopapp.h">
@@ -190,6 +193,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\shared\lib\game\coin.h">
       <Filter>Source Files\shared\lib\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\hardware\irandomdriver.h">
+      <Filter>Source Files\shared\lib\api\hardware</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\desktoprandomdriver.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

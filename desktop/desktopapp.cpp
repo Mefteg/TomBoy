@@ -4,6 +4,7 @@
 
 #include "desktopdisplaydriver.h"
 #include "desktopcontrolsdriver.h"
+#include "desktoprandomdriver.h"
 
 #include "../shared/lib/game/gamescenemanager.h"
 
@@ -11,7 +12,8 @@ DesktopApp::DesktopApp()
     : m_window(sf::VideoMode(SCREEN_WIDTH * 3, SCREEN_HEIGHT * 3), "TomBoy") // width must be >= 116
 {
     m_hardwareGateway.display   = new DesktopDisplayDriver(&m_window);
-    m_hardwareGateway.controls  = new DesktopControlsDriver();
+    m_hardwareGateway.controls = new DesktopControlsDriver();
+    m_hardwareGateway.random  = new DesktopRandomDriver();
 
     m_sceneManager = new GameSceneManager(&m_hardwareGateway);
 }
@@ -20,6 +22,7 @@ DesktopApp::~DesktopApp()
 {
     delete m_sceneManager;
 
+    delete m_hardwareGateway.random;
     delete m_hardwareGateway.controls;
     delete m_hardwareGateway.display;
 }
@@ -29,6 +32,7 @@ bool DesktopApp::setup()
     bool success = true;
 
     success &= m_hardwareGateway.display->init();
+    success &= m_hardwareGateway.random->init();
 
     return success;
 }

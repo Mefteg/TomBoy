@@ -4,6 +4,7 @@
 
 #include "arduinodisplaydriver.h"
 #include "arduinocontrolsdriver.h"
+#include "arduinorandomdriver.h"
 
 #include "game/gamescenemanager.h"
 
@@ -14,6 +15,7 @@ ArduinoApp::ArduinoApp()
 
     m_hardwareGateway.display   = new ArduinoDisplayDriver();
     m_hardwareGateway.controls  = new ArduinoControlsDriver();
+    m_hardwareGateway.random    = new ArduinoRandomDriver();
 
     m_sceneManager = new GameSceneManager(&m_hardwareGateway);
 }
@@ -22,6 +24,7 @@ ArduinoApp::~ArduinoApp()
 {
     delete m_sceneManager;
 
+    delete m_hardwareGateway.random;
     delete m_hardwareGateway.controls;
     delete m_hardwareGateway.display;
 }
@@ -32,6 +35,7 @@ bool ArduinoApp::setup()
 
     success &= m_hardwareGateway.display->init();
     success &= m_hardwareGateway.controls->init();
+    success &= m_hardwareGateway.random->init();
 
     return success;
 }

@@ -35,6 +35,7 @@
     <ClCompile Include="..\..\..\desktopapp.cpp" />
     <ClCompile Include="..\..\..\desktopcontrolsdriver.cpp" />
     <ClCompile Include="..\..\..\desktopdisplaydriver.cpp" />
+    <ClCompile Include="..\..\..\desktoprandomdriver.cpp" />
     <ClCompile Include="..\..\..\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -50,6 +51,7 @@
     <ClInclude Include="..\..\..\..\shared\lib\api\hardware\icontrolsdriver.h" />
     <ClInclude Include="..\..\..\..\shared\lib\api\hardware\idisplaydriver.h" />
     <ClInclude Include="..\..\..\..\shared\lib\api\hardware\idriver.h" />
+    <ClInclude Include="..\..\..\..\shared\lib\api\hardware\irandomdriver.h" />
     <ClInclude Include="..\..\..\..\shared\lib\api\renderer\basicrenderer.h" />
     <ClInclude Include="..\..\..\..\shared\lib\api\renderer\irenderer.h" />
     <ClInclude Include="..\..\..\..\shared\lib\api\scene\basicscene.h" />
@@ -67,6 +69,7 @@
     <ClInclude Include="..\..\..\desktopapp.h" />
     <ClInclude Include="..\..\..\desktopcontrolsdriver.h" />
     <ClInclude Include="..\..\..\desktopdisplaydriver.h" />
+    <ClInclude Include="..\..\..\desktoprandomdriver.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F4D6BADE-43C1-456B-B30E-2552D0150736}</ProjectGuid>

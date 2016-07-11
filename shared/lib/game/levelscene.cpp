@@ -28,13 +28,20 @@ bool LevelScene::setup()
     p0->reset();
 
     m_objects.push_back(p0);
+     
+    for (unsigned short i = 0; i < 2; ++i)
+    {
+        int posX = m_hardwareGateway->random->getBetween(0, SCREEN_WIDTH);
 
-    Coin* coin0 = new Coin(this, &m_imageCoin);
-    coin0->setSize(m_imageCoin.getWidth(), m_imageCoin.getHeight());
-    coin0->reset();
-    coin0->setActive(true);
+        Coin* coin = new Coin(this, &m_imageCoin);
+        coin->setSize(m_imageCoin.getWidth(), m_imageCoin.getHeight());
+        coin->reset();
+        coin->setPosition(posX, m_imageCoin.getHeight());
+        coin->setActive(true);
 
-    m_objects.push_back(coin0);
+        m_objects.push_back(coin);
+        m_coins.push_back(coin);
+    }
 
     return success;
 }
