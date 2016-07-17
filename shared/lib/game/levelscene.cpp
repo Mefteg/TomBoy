@@ -12,6 +12,7 @@ LevelScene::LevelScene(ISceneManager* sceneManager, HardwareGateway* hardwareGat
     , m_imageCoin(&m_textureAssets, 12, 0, 4, 4)
     , m_imageSpike(&m_textureAssets, 16, 0, 4, 4)
     , m_imageLife(&m_textureAssets, 0, 4, 6, 6)
+    , m_points(0)
 {
 }
 
@@ -23,17 +24,17 @@ bool LevelScene::setup()
 {
     bool success = BasicScene::setup();
 
-    Player* p0 = new Player(this, &m_imagePlayer);
-    p0->setSize(m_imagePlayer.getWidth(), m_imagePlayer.getHeight());
-    p0->reset();
+    Player* player = new Player(this, &m_imagePlayer);
+    player->setSize(m_imagePlayer.getWidth(), m_imagePlayer.getHeight());
+    player->reset();
 
-    m_objects.push_back(p0);
+    m_objects.push_back(player);
      
     for (unsigned short i = 0; i < 2; ++i)
     {
         int posX = m_hardwareGateway->random->getBetween(0, SCREEN_WIDTH);
 
-        Coin* coin = new Coin(this, &m_imageCoin);
+        Coin* coin = new Coin(this, &m_imageCoin, player);
         coin->setSize(m_imageCoin.getWidth(), m_imageCoin.getHeight());
         coin->reset();
         coin->setPosition(posX, m_imageCoin.getHeight());
@@ -52,8 +53,18 @@ bool LevelScene::update(float dt)
 
     if (m_controlsmanager->isButtonPressed(IControlsDriver::BUTTON_B))
     {
-        m_sceneManager->setCurrentScene(new LevelScene(m_sceneManager, m_hardwareGateway));
+        gameOver();
     }
 
     return success;
+}
+
+void LevelScene::updatePoints(unsigned short points)
+{
+    m_points += points;
+}
+
+void LevelScene::gameOver()
+{
+    m_sceneManager->setCurrentScene(new LevelScene(m_sceneManager, m_hardwareGateway));
 }

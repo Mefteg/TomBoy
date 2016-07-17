@@ -3,12 +3,15 @@
 
 #include "../api/gameobject/sprite.h"
 
+class Player;
+
 class Coin : public Sprite
 {
 public:
     Coin();
     Coin(IScene* scene);
     Coin(IScene* scene, const Image* pixels);
+    Coin(IScene* scene, const Image* pixels, Player* player);
 
     virtual bool    update(float dt) override;
     virtual void    draw(IRenderer* renderer) const override;
@@ -23,6 +26,8 @@ protected:
     static const float COIN_SPEED_MAX;
 
     bool    m_active;
+
+    Player* m_player;
 };
 
 #endif //__TB_COIN__

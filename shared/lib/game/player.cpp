@@ -32,25 +32,26 @@ bool Player::update(float dt)
 
     m_speedX = m_scene->getControlsManager().getAxis(IControlsDriver::AXIS_X) * PLAYER_SPEED_MAX;
 
-    m_x += m_speedX * dt;
-    if (m_x < 0)
+    float posX = m_position.getX() + (m_speedX * dt);
+    if (posX < 0)
     {
-        m_x = 0;
+        posX = 0;
         m_speedX *= -1;
     }
-    else if (m_x + m_width > SCREEN_WIDTH + 1)
+    else if (posX + m_width > SCREEN_WIDTH + 1)
     {
-        m_x = (float) (SCREEN_WIDTH - m_width);
+        posX = (float) (SCREEN_WIDTH - m_width);
         m_speedX *= -1;
     }
+    m_position.setX(posX);
 
     return true;
 }
 
 void Player::reset()
 {
-    m_x = (SCREEN_WIDTH - m_width) / 2;
-    m_y = SCREEN_HEIGHT - (m_height + 2);
+    m_position.setX((float) (SCREEN_WIDTH - m_width) / 2);
+    m_position.setY((float) SCREEN_HEIGHT - (m_height + 2));
 
     m_speedX = 0.0f;
 }

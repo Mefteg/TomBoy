@@ -2,8 +2,6 @@
 
 Sprite::Sprite()
     : m_scene(nullptr)
-    , m_x(0)
-    , m_y(0)
     , m_width(0)
     , m_height(0)
     , m_image(0)
@@ -13,8 +11,6 @@ Sprite::Sprite()
 
 Sprite::Sprite(IScene* scene)
     : m_scene(scene)
-    , m_x(0)
-    , m_y(0)
     , m_width(0)
     , m_height(0)
     , m_image(0)
@@ -24,8 +20,6 @@ Sprite::Sprite(IScene* scene)
 
 Sprite::Sprite(IScene* scene, const Image* image)
     : m_scene(scene)
-    , m_x(0)
-    , m_y(0)
     , m_width(0)
     , m_height(0)
     , m_image(image)
@@ -47,7 +41,7 @@ void Sprite::draw(IRenderer* renderer) const
 {
     if (m_image)
     {
-        m_image->draw(renderer, (unsigned int) m_x, (unsigned int) m_y);
+        m_image->draw(renderer, (unsigned int) m_position.getX(), (unsigned int) m_position.getY());
     }
 }
 
@@ -55,10 +49,17 @@ void Sprite::reset()
 {
 }
 
+AABB Sprite::getAABB() const
+{
+    Vector2 max(m_position);
+    max.add((float) m_width, (float) m_height);
+    return AABB(m_position, max);
+}
+
 void Sprite::setPosition(float x, float y)
 {
-    m_x = x;
-    m_y = y;
+    m_position.setX(x);
+    m_position.setY(y);
 }
 
 void Sprite::setSize(unsigned int w, unsigned int h)

@@ -1,5 +1,8 @@
 #include "coin.h"
 
+#include "levelscene.h"
+#include "player.h"
+
 const float Coin::COIN_SPEED_MAX = 10.0f;
 
 Coin::Coin()
@@ -23,19 +26,31 @@ Coin::Coin(IScene * scene, const Image * pixels)
     reset();
 }
 
+Coin::Coin(IScene * scene, const Image * pixels, Player * player)
+    : Sprite(scene, pixels)
+    , m_active(false)
+    , m_player(player)
+{
+}
+
 bool Coin::update(float dt)
 {
     if (m_active)
     {
-        m_y += COIN_SPEED_MAX * dt;
+        float posY = m_position.getY();
+        posY += COIN_SPEED_MAX * dt;
+        m_position.setY(posY);
 
         // collision with player
-        if (false)
+        if (m_player && getAABB().isColliding(m_player->getAABB()))
         {
+            LevelScene* scene = (LevelScene*) m_scene;
+            scene->updatePoints(1);
 
+            m_active = false;
         }
         // too low
-        else if ((m_y + m_height) > SCREEN_HEIGHT)
+        else if ((posY + m_height) > SCREEN_HEIGHT)
         {
             m_active = false;
         }
@@ -54,8 +69,8 @@ void Coin::draw(IRenderer * renderer) const
 
 void Coin::reset()
 {
-    m_x = 0;
-    m_y = 0;
+    m_position.setX(0);
+    m_position.setY(0);
 
     m_active = false;
 }

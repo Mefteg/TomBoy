@@ -49,6 +49,9 @@
     <Filter Include="Source Files\shared\lib\api\graphics">
       <UniqueIdentifier>{2d9bef3f-7e07-4d21-8c36-e8633c66e62c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\shared\lib\api\math">
+      <UniqueIdentifier>{446f893f-8f18-45ef-a935-addbc08a7027}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\desktopapp.cpp">
@@ -104,6 +107,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\desktoprandomdriver.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\lib\api\math\vector2.cpp">
+      <Filter>Source Files\shared\lib\api\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\lib\api\math\aabb.cpp">
+      <Filter>Source Files\shared\lib\api\math</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -199,6 +208,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\desktoprandomdriver.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\math\vector2.h">
+      <Filter>Source Files\shared\lib\api\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\math\aabb.h">
+      <Filter>Source Files\shared\lib\api\math</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,6 +3,8 @@
 
 #include "../api/gameobject/sprite.h"
 
+#include "../api/math/aabb.h"
+
 class Player : public Sprite
 {
 public:

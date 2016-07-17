@@ -5,6 +5,8 @@
 
 #include "../graphics/image.h"
 
+#include "../math/aabb.h"
+
 class Sprite : public IGameObject
 {
 public:
@@ -18,10 +20,12 @@ public:
 
     virtual void    reset() override;
 
-    float           getX() const { return m_x; }
-    float           getY() const { return m_y; }
+    float           getX() const { return m_position.getX(); }
+    float           getY() const { return m_position.getY(); }
     unsigned int    getWidth() const { return m_width; }
     unsigned int    getHeight() const { return m_height; }
+
+    AABB            getAABB() const;
 
     void            setPosition(float x, float y);
     void            setSize(unsigned int w, unsigned int h);
@@ -29,8 +33,7 @@ public:
 protected:
     IScene*         m_scene;
 
-    float           m_x;
-    float           m_y;
+    Vector2         m_position;
     unsigned int    m_width;
     unsigned int    m_height;
 
