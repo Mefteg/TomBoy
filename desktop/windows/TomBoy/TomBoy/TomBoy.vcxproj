@@ -27,6 +27,7 @@
     <ClCompile Include="..\..\..\..\shared\lib\api\hardware\hardwaregateway.cpp" />
     <ClCompile Include="..\..\..\..\shared\lib\api\math\aabb.cpp" />
     <ClCompile Include="..\..\..\..\shared\lib\api\math\vector2.cpp" />
+    <ClCompile Include="..\..\..\..\shared\lib\api\randomizer\basicrandomizer.cpp" />
     <ClCompile Include="..\..\..\..\shared\lib\api\renderer\basicrenderer.cpp" />
     <ClCompile Include="..\..\..\..\shared\lib\api\scene\basicscene.cpp" />
     <ClCompile Include="..\..\..\..\shared\lib\api\scene\basicscenemanager.cpp" />
@@ -56,6 +57,8 @@
     <ClInclude Include="..\..\..\..\shared\lib\api\hardware\irandomdriver.h" />
     <ClInclude Include="..\..\..\..\shared\lib\api\math\aabb.h" />
     <ClInclude Include="..\..\..\..\shared\lib\api\math\vector2.h" />
+    <ClInclude Include="..\..\..\..\shared\lib\api\randomizer\basicrandomizer.h" />
+    <ClInclude Include="..\..\..\..\shared\lib\api\randomizer\irandomizer.h" />
     <ClInclude Include="..\..\..\..\shared\lib\api\renderer\basicrenderer.h" />
     <ClInclude Include="..\..\..\..\shared\lib\api\renderer\irenderer.h" />
     <ClInclude Include="..\..\..\..\shared\lib\api\scene\basicscene.h" />

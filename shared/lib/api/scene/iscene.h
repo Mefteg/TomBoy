@@ -3,6 +3,7 @@
 
 #include "../renderer/irenderer.h"
 #include "../controlsmanager/icontrolsmanager.h"
+#include "../randomizer/irandomizer.h"
 
 #include "../utils/arraylist.h"
 
@@ -21,6 +22,7 @@ public:
 
     virtual IRenderer&          getRenderer() const = 0;
     virtual IControlsManager&   getControlsManager() const = 0;
+    virtual IRandomizer&        getRandomizer() const = 0;
 
     virtual ArrayList<IGameObject*>&    getGameObjects() = 0;
     virtual unsigned int                getNbGameObjects() const = 0;

@@ -52,6 +52,9 @@
     <Filter Include="Source Files\shared\lib\api\math">
       <UniqueIdentifier>{446f893f-8f18-45ef-a935-addbc08a7027}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\shared\lib\api\randomizer">
+      <UniqueIdentifier>{a00b7366-6cd8-4e22-9bb1-3759541f7ad0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\desktopapp.cpp">
@@ -113,6 +116,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\shared\lib\api\math\aabb.cpp">
       <Filter>Source Files\shared\lib\api\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\lib\api\randomizer\basicrandomizer.cpp">
+      <Filter>Source Files\shared\lib\api\randomizer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -214,6 +220,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\shared\lib\api\math\aabb.h">
       <Filter>Source Files\shared\lib\api\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\randomizer\irandomizer.h">
+      <Filter>Source Files\shared\lib\api\randomizer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\shared\lib\api\randomizer\basicrandomizer.h">
+      <Filter>Source Files\shared\lib\api\randomizer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

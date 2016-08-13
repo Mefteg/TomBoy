@@ -18,16 +18,21 @@ public:
 
     virtual void    reset() override;
 
-    virtual bool    isActive(bool active) const { return m_active; }
-    virtual void    setActive(bool active) { m_active = active; }
+
+    short           getId() const { return m_id; }
+    void            setId(short id) { m_id = id; }
+
+    bool            isActive(bool active) const { return m_active; }
+    void            setActive(bool active) { m_active = active; }
 
 protected:
+    bool            checkPosAndReplaceIfNecessary();
 
     static const float COIN_SPEED_MAX;
 
-    bool    m_active;
-
-    Player* m_player;
+    short           m_id;
+    bool            m_active;
+    Player*         m_player;
 };
 
 #endif //__TB_COIN__

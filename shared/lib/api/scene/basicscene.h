@@ -18,6 +18,7 @@ public:
 
     virtual IRenderer&          getRenderer() const override;
     virtual IControlsManager&   getControlsManager() const override;
+    virtual IRandomizer&        getRandomizer() const override;
 
     virtual ArrayList<IGameObject*>&    getGameObjects() override;
     virtual unsigned int                getNbGameObjects() const override;
@@ -28,6 +29,7 @@ protected:
 
     IRenderer*              m_renderer;
     IControlsManager*       m_controlsmanager;
+    IRandomizer*            m_randomizer;
 
     ArrayList<IGameObject*> m_objects;
 };

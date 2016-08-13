@@ -1,6 +1,6 @@
 #include "player.h"
 
-const float Player::PLAYER_SPEED_MAX = 20.0f;
+const float Player::PLAYER_SPEED_MAX = 25.0f;
 
 Player::Player()
     : Sprite()

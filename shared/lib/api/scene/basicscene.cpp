@@ -2,6 +2,7 @@
 
 #include "../renderer/basicrenderer.h"
 #include "../controlsmanager/basiccontrolsmanager.h"
+#include "../randomizer/basicrandomizer.h"
 
 BasicScene::BasicScene(ISceneManager* sceneManager, HardwareGateway* hardwareGateway)
     : m_sceneManager(sceneManager)
@@ -12,6 +13,7 @@ BasicScene::BasicScene(ISceneManager* sceneManager, HardwareGateway* hardwareGat
 
 BasicScene::~BasicScene()
 {
+    delete m_randomizer;
     delete m_controlsmanager;
     delete m_renderer;
 
@@ -30,6 +32,9 @@ bool BasicScene::setup()
 
     // init default controls manager with the controls driver
     m_controlsmanager = new BasicControlsManager(m_hardwareGateway->controls);
+
+    // init default randomizer with the random driver
+    m_randomizer = new BasicRandomizer(m_hardwareGateway->random);
 
     return true;
 }
@@ -71,6 +76,11 @@ IRenderer& BasicScene::getRenderer() const
 IControlsManager& BasicScene::getControlsManager() const
 {
     return *m_controlsmanager;
+}
+
+IRandomizer& BasicScene::getRandomizer() const
+{
+    return *m_randomizer;
 }
 
 ArrayList<IGameObject*>& BasicScene::getGameObjects()

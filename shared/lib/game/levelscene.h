@@ -5,6 +5,7 @@
 
 #include "../api/graphics/image.h"
 
+class Player;
 class Coin;
 
 class LevelScene : public BasicScene
@@ -19,13 +20,25 @@ public:
     void            updatePoints(unsigned short points);
     void            gameOver();
 
+    unsigned short      getNbActiveCoins() const;
+    ArrayList<Coin*>&   getCoins();
+
 protected:
+    Player*         CreatePlayer();
+    Coin*           CreateCoin();
+
+    static const unsigned short NB_VALID_COINS_START;
+
     Texture m_textureAssets;
     Image   m_imagePlayer;
     Image   m_imageCoin;
     Image   m_imageSpike;
     Image   m_imageLife;
 
+    Player*             m_player;
+
+    unsigned short      m_nbCoinsMax;
+    unsigned short      m_nbActiveCoins;
     ArrayList<Coin*>    m_coins;
 
     unsigned int        m_points;
