@@ -15,7 +15,7 @@ LevelScene::LevelScene(ISceneManager* sceneManager, HardwareGateway* hardwareGat
     , m_imageSpike(&m_textureAssets, 16, 0, 4, 4)
     , m_imageLife(&m_textureAssets, 0, 4, 6, 6)
     , m_player(0)
-    , m_nbCoinsMax(10)
+    , m_nbCoinsMax(1)
     , m_nbActiveCoins(0)
     , m_points(0)
 {
@@ -34,7 +34,7 @@ bool LevelScene::setup()
 
     // add the player to objects array
     m_objects.push_back(m_player);
-     
+
     for (unsigned short i = 0; i < m_nbCoinsMax; ++i)
     {
         // create a new coin
