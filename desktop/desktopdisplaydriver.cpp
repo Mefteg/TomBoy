@@ -2,6 +2,8 @@
 
 #include "../shared/lib/api/tomboydefines.h"
 
+#include "../shared/lib/microprofile/microprofile.h"
+
 DesktopDisplayDriver::DesktopDisplayDriver(sf::RenderWindow* window)
     : m_pixels(0)
 {
@@ -37,6 +39,8 @@ void DesktopDisplayDriver::clearPixels()
 
 void DesktopDisplayDriver::applyPixels()
 {
+    MICROPROFILE_SCOPEI("DesktopDisplayDriver", "applyPixels", MP_YELLOW);
+
     m_texture.update(m_pixels);
     m_window->draw(m_sprite);
 
@@ -59,7 +63,7 @@ void DesktopDisplayDriver::setPixel(unsigned int x, unsigned int y, bool bw)
         }
         else // else white
         {
-            
+
             m_pixels[id] = sf::Color::White.r;
             m_pixels[id + 1] = sf::Color::White.g;
             m_pixels[id + 2] = sf::Color::White.b;

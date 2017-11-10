@@ -2,11 +2,20 @@ cmake_minimum_required(VERSION 3.10)
 
 # Project's name
 project(TomBoy)
-
 set(EXECUTABLE_NAME "tomboy")
 
-set(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -stdlib=libc++")
 
+# MicroProfile
+set(MICROPROFILE_ENABLED OFF CACHE BOOL "Enable/Disable MicroProfile")
+if(MICROPROFILE_ENABLED)
+add_definitions(-DMICROPROFILE_GPU_TIMERS=0)
+add_definitions(-DMICROPROFILE_ENABLED=1)
+else()
+add_definitions(-DMICROPROFILE_ENABLED=0)
+endif()
+
+# Sources & Headers
 file(GLOB SOURCES
     ../*.cpp
 )
@@ -22,6 +31,8 @@ file(GLOB HEADERS
 file(GLOB_RECURSE SHARED_HEADERS
     ../../shared/*.h
 )
+
+# Executable
 
 add_executable(${EXECUTABLE_NAME} ${SOURCES} ${SHARED_SOURCES} ${HEADERS} ${SHARED_HEADERS})
 

@@ -13,3 +13,6 @@
 
 ## Run
 - Execute `./tomboy` in your build folder
+
+## Profiler
+- To enable the profiler, set cmake variable MICROPROFILE_ENABLED to ON (disable by default).

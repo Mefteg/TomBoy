@@ -5,6 +5,8 @@
 #include "player.h"
 #include "coin.h"
 
+#include "../microprofile/microprofile.h"
+
 const unsigned short LevelScene::NB_VALID_COINS_START = 3;
 
 LevelScene::LevelScene(ISceneManager* sceneManager, HardwareGateway* hardwareGateway)
@@ -77,6 +79,8 @@ bool LevelScene::update(float dt)
 
 void LevelScene::updatePoints(unsigned short points)
 {
+    MICROPROFILE_SCOPEI("LevelScene", "updatePoints", MP_YELLOW);
+
     m_points += points;
 
     // if the player has enough points

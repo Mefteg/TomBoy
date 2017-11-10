@@ -8,6 +8,8 @@
 
 #include "../shared/lib/game/gamescenemanager.h"
 
+#include "../shared/lib/microprofile/microprofile.h"
+
 DesktopApp::DesktopApp()
     : m_window(sf::VideoMode(SCREEN_WIDTH * 3, SCREEN_HEIGHT * 3), "TomBoy") // width must be >= 116
 {
@@ -41,24 +43,35 @@ bool DesktopApp::loop()
 {
     bool loopAgain = true;
 
-    sf::Event event;
-    while (m_window.pollEvent(event))
     {
-        if (event.type == sf::Event::Closed)
+        MICROPROFILE_SCOPEI("DesktopApp", "loop", MP_YELLOW);
+
+
+        sf::Event event;
+        while (m_window.pollEvent(event))
         {
-            m_window.close();
-            loopAgain = false;
+            if (event.type == sf::Event::Closed)
+            {
+                m_window.close();
+                loopAgain = false;
+            }
+        }
+
+        if (loopAgain)
+        {
+            {
+
+                sf::Time elapsedTime = m_clock.restart();
+                // update scene
+                loopAgain |= m_sceneManager->updateCurrentScene(elapsedTime.asSeconds());
+                // render scene
+                loopAgain |= m_sceneManager->renderCurrentScene();
+            }
+
         }
     }
 
-    if (loopAgain)
-    {
-        sf::Time elapsedTime = m_clock.restart();
-        // update scene
-        loopAgain |= m_sceneManager->updateCurrentScene(elapsedTime.asSeconds());
-        // render scene
-        loopAgain |= m_sceneManager->renderCurrentScene();
-    }
+    MicroProfileFlip(nullptr);
 
     return loopAgain;
 }
