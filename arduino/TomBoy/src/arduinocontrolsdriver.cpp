@@ -52,7 +52,7 @@ float ArduinoControlsDriver::getAxis(AxisControls axis) const
 float ArduinoControlsDriver::analogAxisValueToFloat(unsigned int value) const
 {
     float ratio = -(((float) value) - 512.0f) / 256;
-    if (ratio > -0.1f && ratio < 0.1f)
+    if (ratio > -0.5f && ratio < 0.5f)
     {
         ratio = 0;
     }
