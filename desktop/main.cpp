@@ -1,8 +1,10 @@
+#include "shared/empty/emptyapp.h"
 #include "desktopapp.h"
 
 int main()
 {
-    DesktopApp app;
+    EmptyApp app;
+    //DesktopApp app;
 
     if (!app.setup())
     {

@@ -27,7 +27,7 @@
 #endif
 
 #ifndef MICROPROFILE_ENABLED
-#define MICROPROFILE_ENABLED 0 // disabled by default
+#define MICROPROFILE_ENABLED 0 // TomBoy - disabled by default
 #endif
 
 #ifndef MICROPROFILE_ONCE

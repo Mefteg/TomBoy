@@ -21,6 +21,7 @@ file(GLOB SOURCES
 )
 
 file(GLOB_RECURSE SHARED_SOURCES
+    ../shared/*.cpp
     ../../shared/*.cpp
 )
 
@@ -29,6 +30,7 @@ file(GLOB HEADERS
 )
 
 file(GLOB_RECURSE SHARED_HEADERS
+    ../shared/*.h
     ../../shared/*.h
 )
 

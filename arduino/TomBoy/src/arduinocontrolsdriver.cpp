@@ -4,8 +4,8 @@
 
 #define PIN_BUTTON_A 4
 #define PIN_BUTTON_B 2
-#define PIN_AXIS_X 0
-#define PIN_AXIS_Y 1
+#define PIN_AXIS_X 0 // A0
+#define PIN_AXIS_Y 1 // A1
 
 ArduinoControlsDriver::ArduinoControlsDriver()
 {
@@ -56,7 +56,7 @@ float ArduinoControlsDriver::analogAxisValueToFloat(unsigned int value) const
     {
         ratio = 0;
     }
-    
+
     if (ratio < -1)
     {
         ratio = -1;
