@@ -1,13 +1,13 @@
-#ifndef __TB_ARDUINODISPLAYDRIVER__
-#define __TB_ARDUINODISPLAYDRIVER__
+#ifndef __TB_PCD8544DISPLAYDRIVER__
+#define __TB_PCD8544DISPLAYDRIVER__
 
 #include "api/hardware/idisplaydriver.h"
 
-class ArduinoDisplayDriver : public IDisplayDriver
+class PCD8544DisplayDriver : public IDisplayDriver
 {
 public:
-    ArduinoDisplayDriver();
-    virtual ~ArduinoDisplayDriver() override;
+    PCD8544DisplayDriver();
+    virtual ~PCD8544DisplayDriver() override;
 
     virtual bool    init() override;
 
@@ -17,4 +17,4 @@ public:
     virtual void    setPixel(unsigned int x, unsigned int y, bool bw) override;
 };
 
-#endif //__TB_ARDUINODISPLAYDRIVER__
+#endif //__TB_PCD8544DISPLAYDRIVER__
