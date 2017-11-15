@@ -2,18 +2,20 @@
 
 #include <Arduino.h>
 
-#include "arduinodisplaydriver.h"
+#include "lib/PCD8544/PCD8544displaydriver.h"
 #include "arduinocontrolsdriver.h"
 #include "arduinorandomdriver.h"
 
 #include "game/gamescenemanager.h"
 
+#ifdef DEBUG
+#include "lib/monitoring/monitoring.h"
+#endif //DEBUG
+
 ArduinoApp::ArduinoApp()
     : m_lastTime(0)
 {
-    Serial.begin(9600);
-
-    m_hardwareGateway.display   = new ArduinoDisplayDriver();
+    m_hardwareGateway.display   = new PCD8544DisplayDriver();
     m_hardwareGateway.controls  = new ArduinoControlsDriver();
     m_hardwareGateway.random    = new ArduinoRandomDriver();
 
@@ -36,6 +38,13 @@ bool ArduinoApp::setup()
     success &= m_hardwareGateway.display->init();
     success &= m_hardwareGateway.controls->init();
     success &= m_hardwareGateway.random->init();
+
+    #ifdef DEBUG
+    Serial.begin(BAUDRATE);
+
+    String message = String(Monitoring::FreeRam());
+    Serial.println(message);
+    #endif //DEBUG
 
     return success;
 }
