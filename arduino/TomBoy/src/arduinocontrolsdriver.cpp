@@ -30,8 +30,10 @@ bool ArduinoControlsDriver::isButtonPressed(ButtonControls button) const
     switch (button)
     {
     case BUTTON_A:
+        Serial.println("BUTTON A");
         return digitalRead(PIN_BUTTON_A);;
     case BUTTON_B:
+        Serial.println("BUTTON B");
         return digitalRead(PIN_BUTTON_B);;
     }
 
@@ -43,8 +45,10 @@ float ArduinoControlsDriver::getAxis(AxisControls axis) const
     // read joystick values (x and y axis)
     switch (axis) {
         case AXIS_X:
+        Serial.println("AXIS X");
         return analogAxisValueToFloat(analogRead(PIN_AXIS_X));
         case AXIS_Y:
+        Serial.println("AXIS Y");
         return -analogAxisValueToFloat(analogRead(PIN_AXIS_Y));
     }
 }
